@@ -7,8 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		063EDEDB22BAE97900136602 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEDA22BAE97900136602 /* RootTableViewController.m */; };
+		063EDEDE22BAE99900136602 /* RootTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEDD22BAE99900136602 /* RootTableViewCell.m */; };
+		063EDEE122BAE9D600136602 /* PlayingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEE022BAE9D600136602 /* PlayingGameViewController.m */; };
 		629A83EA22BAE50D00DDAD3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 629A83E922BAE50C00DDAD3C /* AppDelegate.m */; };
-		629A83ED22BAE50D00DDAD3C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 629A83EC22BAE50D00DDAD3C /* ViewController.m */; };
 		629A83F022BAE50D00DDAD3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629A83EE22BAE50D00DDAD3C /* Main.storyboard */; };
 		629A83F222BAE50D00DDAD3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F122BAE50D00DDAD3C /* Assets.xcassets */; };
 		629A83F522BAE50D00DDAD3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F322BAE50D00DDAD3C /* LaunchScreen.storyboard */; };
@@ -16,11 +18,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		063EDED922BAE97900136602 /* RootTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootTableViewController.h; sourceTree = "<group>"; };
+		063EDEDA22BAE97900136602 /* RootTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootTableViewController.m; sourceTree = "<group>"; };
+		063EDEDC22BAE99900136602 /* RootTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootTableViewCell.h; sourceTree = "<group>"; };
+		063EDEDD22BAE99900136602 /* RootTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootTableViewCell.m; sourceTree = "<group>"; };
+		063EDEDF22BAE9D600136602 /* PlayingGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayingGameViewController.h; sourceTree = "<group>"; };
+		063EDEE022BAE9D600136602 /* PlayingGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingGameViewController.m; sourceTree = "<group>"; };
 		629A83E522BAE50C00DDAD3C /* HollywoodGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HollywoodGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		629A83E822BAE50C00DDAD3C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		629A83E922BAE50C00DDAD3C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		629A83EB22BAE50D00DDAD3C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		629A83EC22BAE50D00DDAD3C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		629A83EF22BAE50D00DDAD3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		629A83F122BAE50D00DDAD3C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		629A83F422BAE50D00DDAD3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,15 +64,19 @@
 		629A83E722BAE50C00DDAD3C /* HollywoodGenius */ = {
 			isa = PBXGroup;
 			children = (
+				063EDEDC22BAE99900136602 /* RootTableViewCell.h */,
+				063EDEDD22BAE99900136602 /* RootTableViewCell.m */,
+				063EDED922BAE97900136602 /* RootTableViewController.h */,
+				063EDEDA22BAE97900136602 /* RootTableViewController.m */,
 				629A83E822BAE50C00DDAD3C /* AppDelegate.h */,
 				629A83E922BAE50C00DDAD3C /* AppDelegate.m */,
-				629A83EB22BAE50D00DDAD3C /* ViewController.h */,
-				629A83EC22BAE50D00DDAD3C /* ViewController.m */,
 				629A83EE22BAE50D00DDAD3C /* Main.storyboard */,
 				629A83F122BAE50D00DDAD3C /* Assets.xcassets */,
 				629A83F322BAE50D00DDAD3C /* LaunchScreen.storyboard */,
 				629A83F622BAE50D00DDAD3C /* Info.plist */,
 				629A83F722BAE50D00DDAD3C /* main.m */,
+				063EDEDF22BAE9D600136602 /* PlayingGameViewController.h */,
+				063EDEE022BAE9D600136602 /* PlayingGameViewController.m */,
 			);
 			path = HollywoodGenius;
 			sourceTree = "<group>";
@@ -141,7 +151,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				629A83ED22BAE50D00DDAD3C /* ViewController.m in Sources */,
+				063EDEDB22BAE97900136602 /* RootTableViewController.m in Sources */,
+				063EDEE122BAE9D600136602 /* PlayingGameViewController.m in Sources */,
+				063EDEDE22BAE99900136602 /* RootTableViewCell.m in Sources */,
 				629A83F822BAE50D00DDAD3C /* main.m in Sources */,
 				629A83EA22BAE50D00DDAD3C /* AppDelegate.m in Sources */,
 			);
