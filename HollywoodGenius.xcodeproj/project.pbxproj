@@ -13,6 +13,7 @@
 		629A83F222BAE50D00DDAD3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F122BAE50D00DDAD3C /* Assets.xcassets */; };
 		629A83F522BAE50D00DDAD3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F322BAE50D00DDAD3C /* LaunchScreen.storyboard */; };
 		629A83F822BAE50D00DDAD3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 629A83F722BAE50D00DDAD3C /* main.m */; };
+		62BFE55F22BAE87E00333A6B /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFE55E22BAE87E00333A6B /* Movie.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		629A83F422BAE50D00DDAD3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		629A83F622BAE50D00DDAD3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		629A83F722BAE50D00DDAD3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		62BFE55D22BAE87E00333A6B /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		62BFE55E22BAE87E00333A6B /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				629A83E922BAE50C00DDAD3C /* AppDelegate.m */,
 				629A83EB22BAE50D00DDAD3C /* ViewController.h */,
 				629A83EC22BAE50D00DDAD3C /* ViewController.m */,
+				62BFE55D22BAE87E00333A6B /* Movie.h */,
+				62BFE55E22BAE87E00333A6B /* Movie.m */,
 				629A83EE22BAE50D00DDAD3C /* Main.storyboard */,
 				629A83F122BAE50D00DDAD3C /* Assets.xcassets */,
 				629A83F322BAE50D00DDAD3C /* LaunchScreen.storyboard */,
@@ -143,6 +148,7 @@
 			files = (
 				629A83ED22BAE50D00DDAD3C /* ViewController.m in Sources */,
 				629A83F822BAE50D00DDAD3C /* main.m in Sources */,
+				62BFE55F22BAE87E00333A6B /* Movie.m in Sources */,
 				629A83EA22BAE50D00DDAD3C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
