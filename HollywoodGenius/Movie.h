@@ -13,10 +13,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Movie : NSObject
 
 @property NSString *title;
-@property NSMutableArray *actors;
-@property NSMutableDictionary *clips;
+@property NSMutableArray *clips;
 
-- (instancetype)initWith:(NSString *)title andActors: (NSArray *)actors andClips: (NSDictionary *)clips;
+- (instancetype)initWithTitle:(NSString *)title andClips: (NSArray *)clips;
 
 @end
 

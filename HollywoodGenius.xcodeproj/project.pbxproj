@@ -11,15 +11,29 @@
 		063EDEDE22BAE99900136602 /* RootTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEDD22BAE99900136602 /* RootTableViewCell.m */; };
 		063EDEE122BAE9D600136602 /* PlayingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEE022BAE9D600136602 /* PlayingGameViewController.m */; };
 		063EDEE422BAF73D00136602 /* GuessAnswersViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEE322BAF73D00136602 /* GuessAnswersViewCell.m */; };
+		6298879622BB355700E0E117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F122BAE50D00DDAD3C /* Assets.xcassets */; };
+		6298879A22BB35BB00E0E117 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6298879922BB35BB00E0E117 /* AVFoundation.framework */; };
+		6298879C22BB35BF00E0E117 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6298879B22BB35BF00E0E117 /* AVKit.framework */; };
+		6298879E22BB35CA00E0E117 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6298879D22BB35CA00E0E117 /* UIKit.framework */; };
+		629887AB22BB367700E0E117 /* Avatar.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 6298879F22BB367600E0E117 /* Avatar.mp4 */; };
+		629887AC22BB367700E0E117 /* Predator-3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 629887A022BB367600E0E117 /* Predator-3.mp4 */; };
+		629887AD22BB367700E0E117 /* Snakes on a Plane.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 629887A122BB367600E0E117 /* Snakes on a Plane.mp4 */; };
+		629887AE22BB367700E0E117 /* Predator-1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 629887A222BB367600E0E117 /* Predator-1.mp4 */; };
+		629887AF22BB367700E0E117 /* The Big Lebowski.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 629887A322BB367600E0E117 /* The Big Lebowski.mp4 */; };
+		629887B022BB367700E0E117 /* Titanic.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 629887A422BB367600E0E117 /* Titanic.mp4 */; };
+		629887B122BB367700E0E117 /* Deadpool.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 629887A522BB367700E0E117 /* Deadpool.mp4 */; };
+		629887B222BB367700E0E117 /* The Princess Bride.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 629887A622BB367700E0E117 /* The Princess Bride.mp4 */; };
+		629887B322BB367700E0E117 /* Airplane.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 629887A722BB367700E0E117 /* Airplane.mp4 */; };
+		629887B422BB367700E0E117 /* Zoolander.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 629887A822BB367700E0E117 /* Zoolander.mp4 */; };
+		629887B522BB367700E0E117 /* Indiana Jones and the Last Crusade.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 629887A922BB367700E0E117 /* Indiana Jones and the Last Crusade.mp4 */; };
+		629887B622BB367700E0E117 /* Predator-2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 629887AA22BB367700E0E117 /* Predator-2.mp4 */; };
 		629A83EA22BAE50D00DDAD3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 629A83E922BAE50C00DDAD3C /* AppDelegate.m */; };
 		629A83F022BAE50D00DDAD3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629A83EE22BAE50D00DDAD3C /* Main.storyboard */; };
-		629A83F222BAE50D00DDAD3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F122BAE50D00DDAD3C /* Assets.xcassets */; };
 		629A83F522BAE50D00DDAD3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F322BAE50D00DDAD3C /* LaunchScreen.storyboard */; };
 		629A83F822BAE50D00DDAD3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 629A83F722BAE50D00DDAD3C /* main.m */; };
 		62BFE55F22BAE87E00333A6B /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFE55E22BAE87E00333A6B /* Movie.m */; };
 		62BFE56222BAEB5800333A6B /* AnswerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFE56022BAEB5800333A6B /* AnswerManager.m */; };
 		62BFE56522BAEC7F00333A6B /* AnswerCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFE56422BAEC7F00333A6B /* AnswerCluster.m */; };
-		62BFE56C22BB0FC100333A6B /* clips in Resources */ = {isa = PBXBuildFile; fileRef = 62BFE56B22BB0FC100333A6B /* clips */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +45,21 @@
 		063EDEE022BAE9D600136602 /* PlayingGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingGameViewController.m; sourceTree = "<group>"; };
 		063EDEE222BAF73D00136602 /* GuessAnswersViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuessAnswersViewCell.h; sourceTree = "<group>"; };
 		063EDEE322BAF73D00136602 /* GuessAnswersViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuessAnswersViewCell.m; sourceTree = "<group>"; };
+		6298879922BB35BB00E0E117 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6298879B22BB35BF00E0E117 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		6298879D22BB35CA00E0E117 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		6298879F22BB367600E0E117 /* Avatar.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Avatar.mp4; sourceTree = "<group>"; };
+		629887A022BB367600E0E117 /* Predator-3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Predator-3.mp4"; sourceTree = "<group>"; };
+		629887A122BB367600E0E117 /* Snakes on a Plane.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Snakes on a Plane.mp4"; sourceTree = "<group>"; };
+		629887A222BB367600E0E117 /* Predator-1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Predator-1.mp4"; sourceTree = "<group>"; };
+		629887A322BB367600E0E117 /* The Big Lebowski.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Big Lebowski.mp4"; sourceTree = "<group>"; };
+		629887A422BB367600E0E117 /* Titanic.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Titanic.mp4; sourceTree = "<group>"; };
+		629887A522BB367700E0E117 /* Deadpool.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Deadpool.mp4; sourceTree = "<group>"; };
+		629887A622BB367700E0E117 /* The Princess Bride.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Princess Bride.mp4"; sourceTree = "<group>"; };
+		629887A722BB367700E0E117 /* Airplane.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Airplane.mp4; sourceTree = "<group>"; };
+		629887A822BB367700E0E117 /* Zoolander.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zoolander.mp4; sourceTree = "<group>"; };
+		629887A922BB367700E0E117 /* Indiana Jones and the Last Crusade.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Indiana Jones and the Last Crusade.mp4"; sourceTree = "<group>"; };
+		629887AA22BB367700E0E117 /* Predator-2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Predator-2.mp4"; sourceTree = "<group>"; };
 		629A83E522BAE50C00DDAD3C /* HollywoodGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HollywoodGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		629A83E822BAE50C00DDAD3C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		629A83E922BAE50C00DDAD3C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -45,7 +74,6 @@
 		62BFE56122BAEB5800333A6B /* AnswerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerManager.h; sourceTree = "<group>"; };
 		62BFE56322BAEC7F00333A6B /* AnswerCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerCluster.h; sourceTree = "<group>"; };
 		62BFE56422BAEC7F00333A6B /* AnswerCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerCluster.m; sourceTree = "<group>"; };
-		62BFE56B22BB0FC100333A6B /* clips */ = {isa = PBXFileReference; lastKnownFileType = folder; path = clips; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,17 +81,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6298879E22BB35CA00E0E117 /* UIKit.framework in Frameworks */,
+				6298879C22BB35BF00E0E117 /* AVKit.framework in Frameworks */,
+				6298879A22BB35BB00E0E117 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6298879822BB35BA00E0E117 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6298879D22BB35CA00E0E117 /* UIKit.framework */,
+				6298879B22BB35BF00E0E117 /* AVKit.framework */,
+				6298879922BB35BB00E0E117 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		629A83DC22BAE50C00DDAD3C = {
 			isa = PBXGroup;
 			children = (
 				629A83E722BAE50C00DDAD3C /* HollywoodGenius */,
 				629A83E622BAE50C00DDAD3C /* Products */,
+				6298879822BB35BA00E0E117 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,28 +120,39 @@
 		629A83E722BAE50C00DDAD3C /* HollywoodGenius */ = {
 			isa = PBXGroup;
 			children = (
-				063EDEDC22BAE99900136602 /* RootTableViewCell.h */,
-				063EDEDD22BAE99900136602 /* RootTableViewCell.m */,
-				063EDED922BAE97900136602 /* RootTableViewController.h */,
-				063EDEDA22BAE97900136602 /* RootTableViewController.m */,
 				629A83E822BAE50C00DDAD3C /* AppDelegate.h */,
 				629A83E922BAE50C00DDAD3C /* AppDelegate.m */,
 				62BFE55D22BAE87E00333A6B /* Movie.h */,
 				62BFE55E22BAE87E00333A6B /* Movie.m */,
 				62BFE56122BAEB5800333A6B /* AnswerManager.h */,
 				62BFE56022BAEB5800333A6B /* AnswerManager.m */,
-				62BFE56B22BB0FC100333A6B /* clips */,
 				62BFE56322BAEC7F00333A6B /* AnswerCluster.h */,
 				62BFE56422BAEC7F00333A6B /* AnswerCluster.m */,
 				629A83EE22BAE50D00DDAD3C /* Main.storyboard */,
-				629A83F122BAE50D00DDAD3C /* Assets.xcassets */,
-				629A83F322BAE50D00DDAD3C /* LaunchScreen.storyboard */,
-				629A83F622BAE50D00DDAD3C /* Info.plist */,
-				629A83F722BAE50D00DDAD3C /* main.m */,
+				063EDED922BAE97900136602 /* RootTableViewController.h */,
+				063EDEDA22BAE97900136602 /* RootTableViewController.m */,
+				063EDEDC22BAE99900136602 /* RootTableViewCell.h */,
+				063EDEDD22BAE99900136602 /* RootTableViewCell.m */,
 				063EDEDF22BAE9D600136602 /* PlayingGameViewController.h */,
 				063EDEE022BAE9D600136602 /* PlayingGameViewController.m */,
 				063EDEE222BAF73D00136602 /* GuessAnswersViewCell.h */,
 				063EDEE322BAF73D00136602 /* GuessAnswersViewCell.m */,
+				629A83F122BAE50D00DDAD3C /* Assets.xcassets */,
+				629A83F322BAE50D00DDAD3C /* LaunchScreen.storyboard */,
+				629A83F622BAE50D00DDAD3C /* Info.plist */,
+				629A83F722BAE50D00DDAD3C /* main.m */,
+				629887A722BB367700E0E117 /* Airplane.mp4 */,
+				6298879F22BB367600E0E117 /* Avatar.mp4 */,
+				629887A522BB367700E0E117 /* Deadpool.mp4 */,
+				629887A922BB367700E0E117 /* Indiana Jones and the Last Crusade.mp4 */,
+				629887A222BB367600E0E117 /* Predator-1.mp4 */,
+				629887AA22BB367700E0E117 /* Predator-2.mp4 */,
+				629887A022BB367600E0E117 /* Predator-3.mp4 */,
+				629887A122BB367600E0E117 /* Snakes on a Plane.mp4 */,
+				629887A322BB367600E0E117 /* The Big Lebowski.mp4 */,
+				629887A622BB367700E0E117 /* The Princess Bride.mp4 */,
+				629887A422BB367600E0E117 /* Titanic.mp4 */,
+				629887A822BB367700E0E117 /* Zoolander.mp4 */,
 			);
 			path = HollywoodGenius;
 			sourceTree = "<group>";
@@ -161,10 +214,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62BFE56C22BB0FC100333A6B /* clips in Resources */,
+				629887AB22BB367700E0E117 /* Avatar.mp4 in Resources */,
+				629887AD22BB367700E0E117 /* Snakes on a Plane.mp4 in Resources */,
+				629887AE22BB367700E0E117 /* Predator-1.mp4 in Resources */,
+				629887B422BB367700E0E117 /* Zoolander.mp4 in Resources */,
+				629887B622BB367700E0E117 /* Predator-2.mp4 in Resources */,
+				629887B222BB367700E0E117 /* The Princess Bride.mp4 in Resources */,
+				6298879622BB355700E0E117 /* Assets.xcassets in Resources */,
 				629A83F522BAE50D00DDAD3C /* LaunchScreen.storyboard in Resources */,
-				629A83F222BAE50D00DDAD3C /* Assets.xcassets in Resources */,
 				629A83F022BAE50D00DDAD3C /* Main.storyboard in Resources */,
+				629887B322BB367700E0E117 /* Airplane.mp4 in Resources */,
+				629887AF22BB367700E0E117 /* The Big Lebowski.mp4 in Resources */,
+				629887AC22BB367700E0E117 /* Predator-3.mp4 in Resources */,
+				629887B522BB367700E0E117 /* Indiana Jones and the Last Crusade.mp4 in Resources */,
+				629887B022BB367700E0E117 /* Titanic.mp4 in Resources */,
+				629887B122BB367700E0E117 /* Deadpool.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,14 +10,13 @@
 
 @implementation Movie
 
-- (instancetype)initWith:(NSString *)title andActors: (NSArray *)actors andClips: (NSDictionary *)clips
+- (instancetype)initWithTitle:(NSString *)title andClips: (NSMutableArray *)clips
 {
     self = [super init];
     if (self) {
         
         self.title = title;
-        self.actors = [[NSMutableArray alloc] initWithArray:actors];
-        self.clips = [[NSMutableDictionary alloc] initWithDictionary:clips];
+        self.clips = [[NSMutableArray alloc] initWithArray:clips];
         
     }
     return self;
