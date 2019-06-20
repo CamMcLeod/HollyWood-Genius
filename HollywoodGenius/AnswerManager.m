@@ -14,8 +14,11 @@
 - (instancetype)init {
     if (self = [super init]) {
         
-        // initialize questions array
-        _answersInRound = [[NSMutableArray alloc] init];
+        // initialize clusters array
+        _clustersInRound = [[NSMutableArray alloc] init];
+        // initialize used clips array
+        _clipsInRound = [[NSMutableArray alloc] init];
+        
     }
     return self;
 }
@@ -24,7 +27,7 @@
     
     //add time intervals for each question
     NSTimeInterval totalTime = 0;
-    for (AnswerCluster *answer in self.answersInRound) {
+    for (AnswerCluster *answer in self.clustersInRound) {
         totalTime += answer.answerTime;
     }
     

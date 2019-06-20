@@ -12,7 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AnswerManager : NSObject
 
-@property NSMutableArray *answersInRound;
+@property NSMutableArray *clustersInRound;
+@property NSMutableArray *clipsInRound;
 
 -(float) timeOutput;
 
