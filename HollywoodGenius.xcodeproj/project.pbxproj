@@ -16,6 +16,10 @@
 		629A83F222BAE50D00DDAD3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F122BAE50D00DDAD3C /* Assets.xcassets */; };
 		629A83F522BAE50D00DDAD3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F322BAE50D00DDAD3C /* LaunchScreen.storyboard */; };
 		629A83F822BAE50D00DDAD3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 629A83F722BAE50D00DDAD3C /* main.m */; };
+		62BFE55F22BAE87E00333A6B /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFE55E22BAE87E00333A6B /* Movie.m */; };
+		62BFE56222BAEB5800333A6B /* AnswerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFE56022BAEB5800333A6B /* AnswerManager.m */; };
+		62BFE56522BAEC7F00333A6B /* AnswerCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFE56422BAEC7F00333A6B /* AnswerCluster.m */; };
+		62BFE56C22BB0FC100333A6B /* clips in Resources */ = {isa = PBXBuildFile; fileRef = 62BFE56B22BB0FC100333A6B /* clips */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +39,13 @@
 		629A83F422BAE50D00DDAD3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		629A83F622BAE50D00DDAD3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		629A83F722BAE50D00DDAD3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		62BFE55D22BAE87E00333A6B /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
+		62BFE55E22BAE87E00333A6B /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
+		62BFE56022BAEB5800333A6B /* AnswerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerManager.m; sourceTree = "<group>"; };
+		62BFE56122BAEB5800333A6B /* AnswerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerManager.h; sourceTree = "<group>"; };
+		62BFE56322BAEC7F00333A6B /* AnswerCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerCluster.h; sourceTree = "<group>"; };
+		62BFE56422BAEC7F00333A6B /* AnswerCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerCluster.m; sourceTree = "<group>"; };
+		62BFE56B22BB0FC100333A6B /* clips */ = {isa = PBXFileReference; lastKnownFileType = folder; path = clips; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +84,13 @@
 				063EDEDA22BAE97900136602 /* RootTableViewController.m */,
 				629A83E822BAE50C00DDAD3C /* AppDelegate.h */,
 				629A83E922BAE50C00DDAD3C /* AppDelegate.m */,
+				62BFE55D22BAE87E00333A6B /* Movie.h */,
+				62BFE55E22BAE87E00333A6B /* Movie.m */,
+				62BFE56122BAEB5800333A6B /* AnswerManager.h */,
+				62BFE56022BAEB5800333A6B /* AnswerManager.m */,
+				62BFE56B22BB0FC100333A6B /* clips */,
+				62BFE56322BAEC7F00333A6B /* AnswerCluster.h */,
+				62BFE56422BAEC7F00333A6B /* AnswerCluster.m */,
 				629A83EE22BAE50D00DDAD3C /* Main.storyboard */,
 				629A83F122BAE50D00DDAD3C /* Assets.xcassets */,
 				629A83F322BAE50D00DDAD3C /* LaunchScreen.storyboard */,
@@ -143,6 +161,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62BFE56C22BB0FC100333A6B /* clips in Resources */,
 				629A83F522BAE50D00DDAD3C /* LaunchScreen.storyboard in Resources */,
 				629A83F222BAE50D00DDAD3C /* Assets.xcassets in Resources */,
 				629A83F022BAE50D00DDAD3C /* Main.storyboard in Resources */,
@@ -160,7 +179,10 @@
 				063EDEDB22BAE97900136602 /* RootTableViewController.m in Sources */,
 				063EDEE122BAE9D600136602 /* PlayingGameViewController.m in Sources */,
 				063EDEDE22BAE99900136602 /* RootTableViewCell.m in Sources */,
+				62BFE56222BAEB5800333A6B /* AnswerManager.m in Sources */,
 				629A83F822BAE50D00DDAD3C /* main.m in Sources */,
+				62BFE56522BAEC7F00333A6B /* AnswerCluster.m in Sources */,
+				62BFE55F22BAE87E00333A6B /* Movie.m in Sources */,
 				629A83EA22BAE50D00DDAD3C /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
