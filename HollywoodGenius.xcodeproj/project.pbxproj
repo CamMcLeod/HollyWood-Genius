@@ -10,6 +10,7 @@
 		063EDEDB22BAE97900136602 /* RootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEDA22BAE97900136602 /* RootTableViewController.m */; };
 		063EDEDE22BAE99900136602 /* RootTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEDD22BAE99900136602 /* RootTableViewCell.m */; };
 		063EDEE122BAE9D600136602 /* PlayingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEE022BAE9D600136602 /* PlayingGameViewController.m */; };
+		063EDEE422BAF73D00136602 /* GuessAnswersViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEE322BAF73D00136602 /* GuessAnswersViewCell.m */; };
 		629A83EA22BAE50D00DDAD3C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 629A83E922BAE50C00DDAD3C /* AppDelegate.m */; };
 		629A83F022BAE50D00DDAD3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629A83EE22BAE50D00DDAD3C /* Main.storyboard */; };
 		629A83F222BAE50D00DDAD3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F122BAE50D00DDAD3C /* Assets.xcassets */; };
@@ -24,6 +25,8 @@
 		063EDEDD22BAE99900136602 /* RootTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootTableViewCell.m; sourceTree = "<group>"; };
 		063EDEDF22BAE9D600136602 /* PlayingGameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayingGameViewController.h; sourceTree = "<group>"; };
 		063EDEE022BAE9D600136602 /* PlayingGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingGameViewController.m; sourceTree = "<group>"; };
+		063EDEE222BAF73D00136602 /* GuessAnswersViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuessAnswersViewCell.h; sourceTree = "<group>"; };
+		063EDEE322BAF73D00136602 /* GuessAnswersViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuessAnswersViewCell.m; sourceTree = "<group>"; };
 		629A83E522BAE50C00DDAD3C /* HollywoodGenius.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HollywoodGenius.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		629A83E822BAE50C00DDAD3C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		629A83E922BAE50C00DDAD3C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -77,6 +80,8 @@
 				629A83F722BAE50D00DDAD3C /* main.m */,
 				063EDEDF22BAE9D600136602 /* PlayingGameViewController.h */,
 				063EDEE022BAE9D600136602 /* PlayingGameViewController.m */,
+				063EDEE222BAF73D00136602 /* GuessAnswersViewCell.h */,
+				063EDEE322BAF73D00136602 /* GuessAnswersViewCell.m */,
 			);
 			path = HollywoodGenius;
 			sourceTree = "<group>";
@@ -151,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				063EDEE422BAF73D00136602 /* GuessAnswersViewCell.m in Sources */,
 				063EDEDB22BAE97900136602 /* RootTableViewController.m in Sources */,
 				063EDEE122BAE9D600136602 /* PlayingGameViewController.m in Sources */,
 				063EDEDE22BAE99900136602 /* RootTableViewCell.m in Sources */,

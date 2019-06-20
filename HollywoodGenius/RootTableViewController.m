@@ -8,6 +8,7 @@
 
 #import "RootTableViewController.h"
 #import "RootTableViewCell.h"
+#import "PlayingGameViewController.h"
 
 @interface RootTableViewController ()
 
@@ -40,6 +41,14 @@
     RootTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"playGame" forIndexPath:indexPath];
     cell.gameType.text = @"Guess the movie name.";
     return cell;
+}
+
+//func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//    return CGFloat(80)
+//}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 150; 
 }
 
 
@@ -77,14 +86,16 @@
 }
 */
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [self performSegueWithIdentifier:@"beginPlayingGame" sender:self];
 }
-*/
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"beginPlayingGame"]) {
+        
+    }
+    
+}
+
 
 @end

@@ -1,5 +1,5 @@
 //
-//  PlayingGameViewController.h
+//  GuessAnswersViewCell.h
 //  HollywoodGenius
 //
 //  Created by Ekam Singh Dhaliwal on 2019-06-19.
@@ -10,7 +10,9 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PlayingGameViewController : UIViewController 
+@interface GuessAnswersViewCell : UICollectionViewCell
+
+@property (nonatomic, weak) IBOutlet UIButton *answer; 
 
 @end
 
