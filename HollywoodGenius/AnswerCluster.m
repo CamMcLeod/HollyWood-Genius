@@ -7,27 +7,34 @@
 //
 
 #import "AnswerCluster.h"
+#import "AnswerManager.h"
 #import "Movie.h"
 
 @implementation AnswerCluster
 
-- (instancetype)initWithCluster: (NSArray *) movieCluster {
+- (instancetype)initWithCluster: (NSMutableArray *) movieCluster {
     if (self = [super init]) {
         // set start time to now
         _startTime = [NSDate date];
-        _answers = [[NSArray alloc] initWithArray:movieCluster];
+        _movies = [[NSMutableArray alloc] initWithArray:movieCluster];
+        
+        Movie *movie = movieCluster[arc4random_uniform(4)];
+        NSArray *clips = movie.clips;
+        _correctAnswerName = movie.title;
+        _correctAnswerClip = clips[arc4random_uniform([clips count])];
+        
     }
     return self;
 }
 
-- (void) setCorrectAnswer:(Movie *)correctMovie{
-    _correctAnswer = correctMovie;
+- (void) setCorrectAnswerClip:(NSURL *)correctMovieClip{
+    _correctAnswerClip = correctMovieClip;
 }
 
 // overriding getter to return end date when answer is got
-- (Movie *)correctAnswer {
+- (NSURL *)correctAnswerClip {
     _endTime = [NSDate date];
-    return _correctAnswer;
+    return _correctAnswerClip;
 }
 
 - (NSTimeInterval) answerTime {

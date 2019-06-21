@@ -8,6 +8,7 @@
 
 #import "AnswerManager.h"
 #import "AnswerCluster.h"
+#import "Movie.h"
 
 @implementation AnswerManager
 
@@ -37,6 +38,13 @@
     NSLog(@"%@", [NSString stringWithFormat:@"total time: %.fs", totalTime]);
     
     return totalTime;
+}
+
+-(void)appendCluster:(AnswerCluster *)cluster{
+    
+    [self.clustersInRound addObject:cluster];
+    [self.clipsInRound addObject:cluster.correctAnswerClip];
+    
 }
 
 

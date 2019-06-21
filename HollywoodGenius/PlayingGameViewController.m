@@ -18,11 +18,16 @@
 @property (weak, nonatomic) IBOutlet UILabel *score;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIView *videoContainerView;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 
 @property (nonatomic) NSMutableArray *dummyMovieAnswerArray;
+@property (nonatomic) AnswerManager *answerManager;
+@property (nonatomic) AnswerCluster *answerCluster;
 
 -(void)loadVideoWithURL:(NSURL *) pathURL;
 -(void)importDataset;
+-(void)askNewQuestion;
+-(void)resetViewForNewQuestion;
 
 @end
 
@@ -35,19 +40,21 @@
     backgroundImageView.image = backgroundImage;
     [self.view insertSubview:backgroundImageView atIndex:0];
 
-    self.dummyMovieAnswerArray = [[NSMutableArray alloc] initWithCapacity:10];
-    [self importDataset];
-    
-    AnswerManager *myManager = [[AnswerManager alloc] init];
-    
-    Movie *currentMovie = self.dummyMovieAnswerArray[0];
-    
-    [self loadVideoWithURL:currentMovie.clips[0]];
-    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
+    [self importDataset];
+
+    [self askNewQuestion];
+    
+    self.answerManager = [[AnswerManager alloc] init];
+    
 }
+
+- (void)registerClass:(Class)cellClass forCellWithReuseIdentifier:(NSString *)identifier{
+    
+}
+
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
 
@@ -61,13 +68,15 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     GuessAnswersViewCell *cell =  [collectionView dequeueReusableCellWithReuseIdentifier:@"guessAnswers" forIndexPath:indexPath];
-    Movie *cellMovie = (self.dummyMovieAnswerArray)[indexPath.row];
+    Movie *cellMovie = (self.answerCluster.movies)[indexPath.row];
     NSString *movieName = cellMovie.title;
     [cell.answer setTitle:movieName forState:UIControlStateNormal];
 //    [cell.answer sizeToFit];
     cell.answer.titleLabel.numberOfLines = 2;//    cell.answer.titleLabel.lineBreakMode = NSLineBreakByClipping;
     cell.answer.titleLabel.adjustsFontSizeToFitWidth = YES;
     cell.answer.contentScaleFactor = 1;
+    [cell setBackgroundColor: [UIColor lightGrayColor]];
+    [cell.answer setBackgroundColor:[UIColor lightGrayColor]];
     
 //    cell.answer.titleLabel.adjustsFontSizeToFitWidth = YES;
     return cell;
@@ -75,8 +84,8 @@
     ; }
 
 -(void)loadVideoWithURL:(NSURL *) pathURL {
-    
     AVPlayer *videoPlayer = [AVPlayer playerWithURL:pathURL];
+    
     AVPlayerViewController *playerController = [[AVPlayerViewController alloc] init];
     playerController.player = videoPlayer;
     AVPlayerLayer *playerLayer = [[AVPlayerLayer alloc] init];
@@ -95,6 +104,79 @@
     return cellSize;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    GuessAnswersViewCell *selectedCell = [self.collectionView cellForItemAtIndexPath:indexPath];
+    
+    [self.answerManager appendCluster:self.answerCluster];
+    self.timeLabel.text = [NSString stringWithFormat:@"%.1f seconds", [self.answerManager timeOutput]];
+
+    NSString *selectedAnswer = selectedCell.answer.titleLabel.text;
+    if([selectedAnswer isEqualToString:self.answerCluster.correctAnswerName]){
+        [selectedCell setBackgroundColor: [UIColor greenColor]];
+        [selectedCell.answer setBackgroundColor:[UIColor greenColor]];
+        
+        int score = [self.score.text intValue];
+        score++;
+        self.score.text = [NSString stringWithFormat:@"%d", score];
+        
+    } else {
+        [selectedCell setBackgroundColor: [UIColor redColor]];
+        [selectedCell.answer setBackgroundColor:[UIColor redColor]];
+    }
+    
+//    [self resetViewForNewQuestion];
+    
+}
+
+-(void)askNewQuestion {
+    
+    NSUInteger dummyMovieArrayCount = [self.dummyMovieAnswerArray count];
+    
+    NSMutableArray *movies = [[NSMutableArray alloc] init];
+    
+    Movie *movie = [[Movie alloc] init];
+    bool haveEnoughChoices = NO;
+    do {
+        int j = arc4random_uniform(dummyMovieArrayCount);
+        movie = self.dummyMovieAnswerArray[j];
+        int movieIndex = [movies indexOfObjectIdenticalTo:movie inRange:NSMakeRange(0,[movies count])];
+        if ( movieIndex < 0){
+            [movies addObject:movie];
+            if([movies count] == 4) {
+                break;
+            }
+        }
+    } while (!haveEnoughChoices);
+    
+    bool clipIsUsed = YES;
+    if ([self.answerManager.clipsInRound count] > 0){
+        do {
+            self.answerCluster = [[AnswerCluster alloc] initWithCluster:movies];
+            int clipIndex = [self.answerManager.clipsInRound indexOfObjectIdenticalTo:self.answerCluster.correctAnswerClip inRange:NSMakeRange(0,[self.answerManager.clipsInRound count])];
+            if ( clipIndex < 0){
+                clipIsUsed = NO;
+            }
+        } while (clipIsUsed);
+    } else {
+        self.answerCluster = [[AnswerCluster alloc] initWithCluster:movies];
+    }
+
+    
+    
+    
+    [self loadVideoWithURL:self.answerCluster.correctAnswerClip];
+}
+
+-(void)resetViewForNewQuestion {
+    
+    self.answerCluster.movies = [[NSMutableArray alloc] init];
+    [self.collectionView reloadData];
+    [self.videoContainerView.layer.sublayers[0] removeFromSuperlayer];
+    [self askNewQuestion];
+    
+    
+}
 //- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
 //    <#code#>
 //}
@@ -151,6 +233,8 @@
 
 
 -(void)importDataset {
+    
+    self.dummyMovieAnswerArray = [[NSMutableArray alloc] initWithCapacity:10];
     
     NSBundle *mainBundle = [NSBundle mainBundle];
     NSURL *path0 = [mainBundle URLForResource:@"Airplane" withExtension:@"mp4"];

@@ -10,12 +10,15 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class AnswerCluster;
+
 @interface AnswerManager : NSObject
 
 @property NSMutableArray *clustersInRound;
 @property NSMutableArray *clipsInRound;
 
 -(float) timeOutput;
+-(void)appendCluster:(AnswerCluster *)cluster;
 
 @end
 

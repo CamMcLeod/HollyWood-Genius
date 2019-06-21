@@ -10,22 +10,23 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-
-@class Movie;
-
 @interface AnswerCluster : NSObject
 {
-    Movie *_correctAnswer;
+    NSURL *_correctAnswerClip;
     
 }
 
-@property (nonatomic, strong) NSArray *answers;
+@property (nonatomic, strong) NSMutableArray *movies;
 @property (nonatomic, strong) NSDate *startTime;
 @property (nonatomic, strong) NSDate *endTime;
+@property (nonatomic, strong) NSString *correctAnswerName;
 
-- (Movie *) correctAnswer;
-- (void) setCorrectAnswer: (Movie *) correctAnswer;
+- (NSURL *) correctAnswerClip;
+- (void) setCorrectAnswerClip: (NSURL *) correctAnswerClip;
 - (NSTimeInterval) answerTime;
 
+- (instancetype)initWithCluster: (NSArray *) movieCluster;
+
 @end
+
 NS_ASSUME_NONNULL_END

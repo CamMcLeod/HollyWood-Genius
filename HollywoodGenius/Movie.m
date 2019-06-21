@@ -10,6 +10,15 @@
 
 @implementation Movie
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        self.clips = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 - (instancetype)initWithTitle:(NSString *)title andClips: (NSMutableArray *)clips
 {
     self = [super init];
