@@ -31,10 +31,13 @@
 		629A83F022BAE50D00DDAD3C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629A83EE22BAE50D00DDAD3C /* Main.storyboard */; };
 		629A83F522BAE50D00DDAD3C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F322BAE50D00DDAD3C /* LaunchScreen.storyboard */; };
 		629A83F822BAE50D00DDAD3C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 629A83F722BAE50D00DDAD3C /* main.m */; };
+		62ACDD9C22BD5E610035C522 /* PopupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62ACDD9B22BD5E610035C522 /* PopupViewController.m */; };
 		62BFE55F22BAE87E00333A6B /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFE55E22BAE87E00333A6B /* Movie.m */; };
 		62BFE56222BAEB5800333A6B /* AnswerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFE56022BAEB5800333A6B /* AnswerManager.m */; };
 		62BFE56522BAEC7F00333A6B /* AnswerCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFE56422BAEC7F00333A6B /* AnswerCluster.m */; };
 		62C314D722BC7F7B00FD8AA3 /* behind_alert_view.png in Resources */ = {isa = PBXBuildFile; fileRef = 62C314D622BC7F7B00FD8AA3 /* behind_alert_view.png */; };
+		62D04B5E22BD88E60079122F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D04B5D22BD88E60079122F /* User.m */; };
+		62D04B6022BD8E210079122F /* UserDelegateProtocol.h in Sources */ = {isa = PBXBuildFile; fileRef = 62D04B5F22BD8D930079122F /* UserDelegateProtocol.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +72,8 @@
 		629A83F422BAE50D00DDAD3C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		629A83F622BAE50D00DDAD3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		629A83F722BAE50D00DDAD3C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		62ACDD9A22BD5E610035C522 /* PopupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PopupViewController.h; sourceTree = "<group>"; };
+		62ACDD9B22BD5E610035C522 /* PopupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopupViewController.m; sourceTree = "<group>"; };
 		62BFE55D22BAE87E00333A6B /* Movie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Movie.h; sourceTree = "<group>"; };
 		62BFE55E22BAE87E00333A6B /* Movie.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Movie.m; sourceTree = "<group>"; };
 		62BFE56022BAEB5800333A6B /* AnswerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerManager.m; sourceTree = "<group>"; };
@@ -76,6 +81,9 @@
 		62BFE56322BAEC7F00333A6B /* AnswerCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerCluster.h; sourceTree = "<group>"; };
 		62BFE56422BAEC7F00333A6B /* AnswerCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerCluster.m; sourceTree = "<group>"; };
 		62C314D622BC7F7B00FD8AA3 /* behind_alert_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = behind_alert_view.png; sourceTree = "<group>"; };
+		62D04B5C22BD88E60079122F /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		62D04B5D22BD88E60079122F /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		62D04B5F22BD8D930079122F /* UserDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDelegateProtocol.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +140,9 @@
 				62BFE56422BAEC7F00333A6B /* AnswerCluster.m */,
 				063EDED922BAE97900136602 /* RootTableViewController.h */,
 				063EDEDA22BAE97900136602 /* RootTableViewController.m */,
+				62D04B5F22BD8D930079122F /* UserDelegateProtocol.h */,
+				62D04B5C22BD88E60079122F /* User.h */,
+				62D04B5D22BD88E60079122F /* User.m */,
 				063EDEDC22BAE99900136602 /* RootTableViewCell.h */,
 				063EDEDD22BAE99900136602 /* RootTableViewCell.m */,
 				063EDEDF22BAE9D600136602 /* PlayingGameViewController.h */,
@@ -139,6 +150,8 @@
 				063EDEE222BAF73D00136602 /* GuessAnswersViewCell.h */,
 				063EDEE322BAF73D00136602 /* GuessAnswersViewCell.m */,
 				629A83EE22BAE50D00DDAD3C /* Main.storyboard */,
+				62ACDD9A22BD5E610035C522 /* PopupViewController.h */,
+				62ACDD9B22BD5E610035C522 /* PopupViewController.m */,
 				62C314D622BC7F7B00FD8AA3 /* behind_alert_view.png */,
 				629A83F122BAE50D00DDAD3C /* Assets.xcassets */,
 				629A83F322BAE50D00DDAD3C /* LaunchScreen.storyboard */,
@@ -243,13 +256,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62D04B6022BD8E210079122F /* UserDelegateProtocol.h in Sources */,
 				063EDEE422BAF73D00136602 /* GuessAnswersViewCell.m in Sources */,
 				063EDEDB22BAE97900136602 /* RootTableViewController.m in Sources */,
 				063EDEE122BAE9D600136602 /* PlayingGameViewController.m in Sources */,
 				063EDEDE22BAE99900136602 /* RootTableViewCell.m in Sources */,
 				62BFE56222BAEB5800333A6B /* AnswerManager.m in Sources */,
 				629A83F822BAE50D00DDAD3C /* main.m in Sources */,
+				62D04B5E22BD88E60079122F /* User.m in Sources */,
 				62BFE56522BAEC7F00333A6B /* AnswerCluster.m in Sources */,
+				62ACDD9C22BD5E610035C522 /* PopupViewController.m in Sources */,
 				62BFE55F22BAE87E00333A6B /* Movie.m in Sources */,
 				629A83EA22BAE50D00DDAD3C /* AppDelegate.m in Sources */,
 			);

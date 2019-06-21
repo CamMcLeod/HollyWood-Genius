@@ -9,21 +9,28 @@
 #import "RootTableViewController.h"
 #import "RootTableViewCell.h"
 #import "PlayingGameViewController.h"
+#import "User.h"
 
 @interface RootTableViewController ()
 
+@property User *user;
+
 @end
+
+
 
 @implementation RootTableViewController
 
+const int QUESTIONS_IN_ROUND = 5;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.user = [[User alloc] init];
 }
 
 #pragma mark - Table view data source
@@ -92,6 +99,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"beginPlayingGame"]) {
+        PlayingGameViewController *dVC = [segue destinationViewController];
+        dVC.user = self.user;
         
     }
     

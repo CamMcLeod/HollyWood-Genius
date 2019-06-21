@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UserDelegateProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface RootTableViewController : UITableViewController
+@interface RootTableViewController : UITableViewController <UserDelegateProtocol>
+
+extern const int QUESTIONS_IN_ROUND;
 
 @end
 

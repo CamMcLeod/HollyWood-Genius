@@ -12,7 +12,12 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface PlayingGameViewController : UIViewController 
+
+@class User;
+
+@interface PlayingGameViewController : UIViewController
+
+@property User *user;
 
 @end
 

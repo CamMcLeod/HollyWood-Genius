@@ -7,10 +7,13 @@
 //
 
 #import "PlayingGameViewController.h"
+#import "RootTableViewController.h"
+#import "PopupViewController.h"
 #import "GuessAnswersViewCell.h"
 #import "Movie.h"
 #import "AnswerManager.h"
 #import "AnswerCluster.h"
+#import "User.h"
 
 @interface PlayingGameViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -30,12 +33,13 @@
 -(void)resetViewForNewQuestion;
 -(void)runTimer;
 -(void)updateTimer;
-- (IBAction)exitPopoverPressed:(id)sender;
+-(void)createAnswerCluster;
 
 @end
 
 @implementation PlayingGameViewController {
     bool answerIsCorrect;
+    bool answerUpdated;
     NSTimeInterval questionTime;
     NSTimer *timer;
 }
@@ -46,12 +50,14 @@
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
     backgroundImageView.image = backgroundImage;
     [self.view insertSubview:backgroundImageView atIndex:0];
-
+    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
     [self importDataset];
 
+    answerUpdated = NO;
+    
     [self askNewQuestion];
     
     self.answerManager = [[AnswerManager alloc] init];
@@ -97,7 +103,7 @@
     playerController.player = videoPlayer;
     AVPlayerLayer *playerLayer = [[AVPlayerLayer alloc] init];
     [playerLayer setPlayer:videoPlayer];
-    playerLayer.frame = CGRectOffset(self.videoContainerView.frame, 0, -40);
+    playerLayer.frame = CGRectOffset(self.videoContainerView.frame, 0, 0);
     
     [self.videoContainerView.layer addSublayer:playerLayer];
     [videoPlayer play];
@@ -115,36 +121,46 @@
     
     GuessAnswersViewCell *selectedCell = [self.collectionView cellForItemAtIndexPath:indexPath];
     
-    [self.answerManager appendCluster:self.answerCluster];
-    [timer invalidate];
-    self.timeLabel.text = [NSString stringWithFormat:@"%.1f seconds", self.answerManager.timeOutput];
-
     NSString *selectedAnswer = selectedCell.answer.titleLabel.text;
     if([selectedAnswer isEqualToString:self.answerCluster.correctAnswerName]){
+        answerIsCorrect = YES;
         [selectedCell setBackgroundColor: [UIColor greenColor]];
         [selectedCell.answer setBackgroundColor:[UIColor greenColor]];
         
         int score = [self.score.text intValue];
         score++;
         self.score.text = [NSString stringWithFormat:@"%d", score];
-        answerIsCorrect = YES;
+        
         
     } else {
+        answerIsCorrect = NO;
         [selectedCell setBackgroundColor: [UIColor redColor]];
         [selectedCell.answer setBackgroundColor:[UIColor redColor]];
-        answerIsCorrect = NO;
+        
     }
     
+    [self.answerManager appendCluster:self.answerCluster];
+    [timer invalidate];
+    self.timeLabel.text = [NSString stringWithFormat:@"%.1f seconds", self.answerManager.timeOutput];
+    
+    [self performSegueWithIdentifier:@"answerResult" sender:self];
 //    [self resetViewForNewQuestion];
     
 }
 
 -(void)askNewQuestion {
     
+    [self createAnswerCluster];
+    [self loadVideoWithURL:self.answerCluster.correctAnswerClip];
+    [self runTimer];
+    
+}
+
+
+-(void)createAnswerCluster {
+    
     NSUInteger dummyMovieArrayCount = [self.dummyMovieAnswerArray count];
-    
     NSMutableArray *movies = [[NSMutableArray alloc] init];
-    
     Movie *movie = [[Movie alloc] init];
     bool haveEnoughChoices = NO;
     do {
@@ -171,28 +187,6 @@
     } else {
         self.answerCluster = [[AnswerCluster alloc] initWithCluster:movies];
     }
-
-    
-    
-    
-    [self loadVideoWithURL:self.answerCluster.correctAnswerClip];
-    [self runTimer];
-}
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(GuessAnswersViewCell *)cell{
-    if([segue.identifier isEqualToString: @"answerResult"]){
-        
-        [self setModalPresentationStyle:UIModalPresentationCurrentContext];
-//        UIViewController *dVC = [segue destinationViewController];
-        
-    }
-    
-}
-
-- (IBAction)unwindToPlayingGameViewController:(UIStoryboardSegue *)unwindSegue {
-    UIViewController *sourceViewController = unwindSegue.sourceViewController;
-    // Use data from the view controller which initiated the unwind segue
-    [self resetViewForNewQuestion];
 }
 
 -(void)resetViewForNewQuestion {
@@ -200,6 +194,7 @@
     self.answerCluster.movies = [[NSMutableArray alloc] init];
     [self.collectionView reloadData];
     [self.videoContainerView.layer.sublayers[0] removeFromSuperlayer];
+    
     [self askNewQuestion];
     
     
@@ -217,61 +212,48 @@
     
 }
 
-//- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
-//    <#code#>
-//}
-//
-//- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
-//    <#code#>
-//}
-//
-//- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-//    <#code#>
-//}
-//
-//- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
-//    return CGSizeMake(self.view.frame.size.width, 200); 
-//}
-//
-//- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
-//    <#code#>
-//}
-//
-//- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-//    <#code#>
-//}
-//
-//- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
-//    <#code#>
-//}
-//
-//- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
-//    <#code#>
-//}
-//
-//- (void)setNeedsFocusUpdate {
-//    <#code#>
-//}
-//
-//- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
-//    <#code#>
-//}
-//
-//- (void)updateFocusIfNeeded {
-//    <#code#>
-//}
-
-/*
  #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+    if([segue.identifier isEqualToString: @"answerResult"]){
+        
+        [self setModalPresentationStyle:UIModalPresentationCurrentContext];
+        PopupViewController *dVC = [segue destinationViewController];
+        dVC.answerIsCorrect = answerIsCorrect;
+        if ([self.answerManager.clipsInRound count] == QUESTIONS_IN_ROUND){
+            dVC.endOfRound = TRUE;
+            dVC.score = self.score.text;
+            dVC.time = self.timeLabel.text;
+            [self.score setHidden:YES];
+            [self.timeLabel setHidden:YES];
+        } else {
+            dVC.endOfRound = FALSE;
+        }
+        
+        
+    }
+    
+}
 
+- (IBAction)unwindToPlayingGameViewController:(UIStoryboardSegue *)unwindSegue {
+    
+    PopupViewController *sourceViewController = unwindSegue.sourceViewController;
+    
+    if ([unwindSegue.identifier isEqualToString:@"nextOrPlayAgain"]){
+        if(sourceViewController.endOfRound) {
+            self.answerManager = [[AnswerManager alloc] init];
+            self.score.text = @"0";
+            [self.score setHidden:NO];
+            [self.timeLabel setHidden:NO];
+        }
+        [self resetViewForNewQuestion];
+    } else if ([unwindSegue.identifier isEqualToString:@"exitGame"]){
+        [self.navigationController popViewControllerAnimated:NO];
+    }
+}
+
+#pragma mark - Data Organization
 -(void)importDataset {
     
     self.dummyMovieAnswerArray = [[NSMutableArray alloc] initWithCapacity:10];
