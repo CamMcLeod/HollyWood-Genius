@@ -106,7 +106,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    GuessAnswersViewCell *selectedCell = [self.collectionView cellForItemAtIndexPath:indexPath];
+    GuessAnswersViewCell *selectedCell = (GuessAnswersViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     
     [self.answerManager appendCluster:self.answerCluster];
     self.timeLabel.text = [NSString stringWithFormat:@"%.1f seconds", [self.answerManager timeOutput]];
