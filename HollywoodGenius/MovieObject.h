@@ -13,6 +13,11 @@
 
 @interface MovieObject : RLMObject
 
+@property NSString *title;
+@property NSString *uuid;
+
+- (instancetype)initWithTitle:(NSString *)title andUID:(NSString *)uuid; 
+
 @end
 
 

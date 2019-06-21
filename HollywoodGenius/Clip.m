@@ -10,4 +10,16 @@
 
 @implementation Clip
 
+- (instancetype)initWithTitle:(NSString *)title andClipName:(NSString *)clipName andQuote:(NSString *)movieQuote andUID:(NSString *)uuid
+{
+    self = [super init];
+    if (self) {
+        self.title = title;
+        self.uuid = uuid;
+        self.clipName = clipName;
+        self.quote = movieQuote; 
+    }
+    return self;
+}
+
 @end

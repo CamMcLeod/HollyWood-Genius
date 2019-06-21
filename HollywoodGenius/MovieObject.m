@@ -10,4 +10,22 @@
 
 @implementation MovieObject
 
+
+- (instancetype)initWithTitle:(NSString *)title andUID:(NSString *)uuid
+{
+    self = [super init];
+    if (self) {
+        self.title = title;
+        self.uuid = uuid; 
+    }
+    return self;
+}
+
+
++ (NSString *)primaryKey {
+    
+    return @"uuid";
+    
+}
+
 @end

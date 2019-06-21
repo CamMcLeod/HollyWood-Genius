@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MovieObject.h"
+#import "Clip.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RealmManager : NSObject
+
+
+- (void)createInitialData;
 
 @end
 
