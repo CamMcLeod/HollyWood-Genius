@@ -31,7 +31,9 @@
 
 @end
 
-@implementation PlayingGameViewController
+@implementation PlayingGameViewController {
+    bool answerIsCorrect;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -119,10 +121,12 @@
         int score = [self.score.text intValue];
         score++;
         self.score.text = [NSString stringWithFormat:@"%d", score];
+        answerIsCorrect = YES;
         
     } else {
         [selectedCell setBackgroundColor: [UIColor redColor]];
         [selectedCell.answer setBackgroundColor:[UIColor redColor]];
+        answerIsCorrect = NO;
     }
     
 //    [self resetViewForNewQuestion];
@@ -166,6 +170,16 @@
     
     
     [self loadVideoWithURL:self.answerCluster.correctAnswerClip];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(GuessAnswersViewCell *)cell{
+    if([segue.identifier isEqualToString: @"guessAnswers"]){
+        
+        [self setModalPresentationStyle:UIModalPresentationCurrentContext];
+//        UIViewController *dVC = [segue destinationViewController];
+        
+    }
+    
 }
 
 -(void)resetViewForNewQuestion {

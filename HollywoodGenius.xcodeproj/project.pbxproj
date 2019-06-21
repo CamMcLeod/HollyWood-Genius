@@ -34,6 +34,7 @@
 		62BFE55F22BAE87E00333A6B /* Movie.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFE55E22BAE87E00333A6B /* Movie.m */; };
 		62BFE56222BAEB5800333A6B /* AnswerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFE56022BAEB5800333A6B /* AnswerManager.m */; };
 		62BFE56522BAEC7F00333A6B /* AnswerCluster.m in Sources */ = {isa = PBXBuildFile; fileRef = 62BFE56422BAEC7F00333A6B /* AnswerCluster.m */; };
+		62C314D722BC7F7B00FD8AA3 /* behind_alert_view.png in Resources */ = {isa = PBXBuildFile; fileRef = 62C314D622BC7F7B00FD8AA3 /* behind_alert_view.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		62BFE56122BAEB5800333A6B /* AnswerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerManager.h; sourceTree = "<group>"; };
 		62BFE56322BAEC7F00333A6B /* AnswerCluster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerCluster.h; sourceTree = "<group>"; };
 		62BFE56422BAEC7F00333A6B /* AnswerCluster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerCluster.m; sourceTree = "<group>"; };
+		62C314D622BC7F7B00FD8AA3 /* behind_alert_view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = behind_alert_view.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				063EDEE222BAF73D00136602 /* GuessAnswersViewCell.h */,
 				063EDEE322BAF73D00136602 /* GuessAnswersViewCell.m */,
 				629A83EE22BAE50D00DDAD3C /* Main.storyboard */,
+				62C314D622BC7F7B00FD8AA3 /* behind_alert_view.png */,
 				629A83F122BAE50D00DDAD3C /* Assets.xcassets */,
 				629A83F322BAE50D00DDAD3C /* LaunchScreen.storyboard */,
 				629A83F622BAE50D00DDAD3C /* Info.plist */,
@@ -217,6 +220,7 @@
 				629887AB22BB367700E0E117 /* Avatar.mp4 in Resources */,
 				629887AD22BB367700E0E117 /* Snakes on a Plane.mp4 in Resources */,
 				629887AE22BB367700E0E117 /* Predator-1.mp4 in Resources */,
+				62C314D722BC7F7B00FD8AA3 /* behind_alert_view.png in Resources */,
 				629887B422BB367700E0E117 /* Zoolander.mp4 in Resources */,
 				629887B622BB367700E0E117 /* Predator-2.mp4 in Resources */,
 				629887B222BB367700E0E117 /* The Princess Bride.mp4 in Resources */,

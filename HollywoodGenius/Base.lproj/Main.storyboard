@@ -62,16 +62,34 @@
         <scene sceneID="NE8-wD-mHU">
             <objects>
                 <viewController id="ODt-Nf-xXm" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6po-cU-7DY">
+                    <view key="view" alpha="0.94999999999999996" contentMode="scaleToFill" id="6po-cU-7DY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="behind_alert_view.png" translatesAutoresizingMaskIntoConstraints="NO" id="sP1-Z8-dTU">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BLH-uK-42u">
+                                <rect key="frame" x="183" y="424" width="48" height="48"/>
+                                <color key="backgroundColor" red="0.32369780539999998" green="0.1063579395" blue="0.574860394" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Exit"/>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="sP1-Z8-dTU" firstAttribute="leading" secondItem="6po-cU-7DY" secondAttribute="leading" id="Lce-Vs-Le2"/>
+                            <constraint firstItem="BLH-uK-42u" firstAttribute="centerY" secondItem="6po-cU-7DY" secondAttribute="centerY" id="aXT-e5-RPd"/>
+                            <constraint firstItem="BLH-uK-42u" firstAttribute="centerX" secondItem="6po-cU-7DY" secondAttribute="centerX" id="akh-Vk-tFf"/>
+                            <constraint firstAttribute="bottom" secondItem="sP1-Z8-dTU" secondAttribute="bottom" id="jCf-yG-IMO"/>
+                            <constraint firstAttribute="trailing" secondItem="sP1-Z8-dTU" secondAttribute="trailing" id="lfo-Qs-o0M"/>
+                            <constraint firstItem="sP1-Z8-dTU" firstAttribute="top" secondItem="6po-cU-7DY" secondAttribute="top" id="qQS-PT-0yP"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HGg-Hw-bGg"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCb-1L-MiG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1994" y="820"/>
+            <point key="canvasLocation" x="1992.753623188406" y="819.64285714285711"/>
         </scene>
         <!--Playing Game View Controller-->
         <scene sceneID="gKb-zc-yvo">
@@ -135,6 +153,9 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="answer" destination="0HT-Q4-Fpn" id="1Ny-2F-Pe2"/>
+                                            <segue destination="ODt-Nf-xXm" kind="popoverPresentation" popoverAnchorView="35z-bG-NvJ" id="8NF-Nn-4TR">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -207,4 +228,7 @@
             <point key="canvasLocation" x="221.73913043478262" y="78.348214285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="behind_alert_view.png" width="320" height="460"/>
+    </resources>
 </document>
