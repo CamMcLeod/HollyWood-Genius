@@ -13,12 +13,11 @@
 @interface Clip : RLMObject
 
 @property NSString *quote;
-@property NSString *clipName;
 @property NSString *title;
 @property NSString *uuid;
 
 
-- (instancetype)initWithTitle:(NSString *)title andClipName:(NSString *)clipName andQuote:(NSString *)movieQuote andUID:(NSString *)uuid;
+- (instancetype)initWithTitle:(NSString *)title andQuote:(NSString *)movieQuote andUID:(NSString *)uuid;
 
 @end
 

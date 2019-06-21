@@ -14,8 +14,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface RealmManager : NSObject
 
+@property (nonatomic) NSArray *movieObjectList;
+@property (nonatomic) NSArray *clipList; 
 
 - (void)createInitialData;
+
+- (void)prepareData;
+- (NSMutableArray *)parseCSVStringIntoArray:(NSString *)csvString;
 
 @end
 
