@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVKit/AVKit.h>
 #import <AVFoundation/AVFoundation.h>
+#import "UserDelegateProtocol.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PlayingGameViewController : UIViewController
 
 @property User *user;
+@property (nonatomic, weak) id  <UserDelegateProtocol>  userDelegate;
 
 @end
 

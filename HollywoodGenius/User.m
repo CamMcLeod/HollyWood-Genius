@@ -15,7 +15,10 @@
     self = [super init];
     if (self) {
         _totalScore = 0;
-        _averageTime = 0.0;;
+        _averageTime = 0.0;
+        _bestTime = 100;
+        _record = [[NSMutableArray alloc] init];
+        _gamesPlayed = 0;
     }
     return self;
 }

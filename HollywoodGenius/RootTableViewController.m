@@ -101,10 +101,13 @@ const int QUESTIONS_IN_ROUND = 5;
     if ([segue.identifier isEqualToString:@"beginPlayingGame"]) {
         PlayingGameViewController *dVC = [segue destinationViewController];
         dVC.user = self.user;
+        dVC.userDelegate = self;
         
     }
     
 }
 
-
+- (void)addNewTime:(float)time andScore:(int)score {
+    self.user 
+}
 @end

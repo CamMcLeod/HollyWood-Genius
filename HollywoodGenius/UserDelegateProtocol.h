@@ -9,9 +9,9 @@
 #import "User.h"
 
 NS_ASSUME_NONNULL_BEGIN
-@protocol NewCityFormDelegate <NSObject>
+@protocol UserDelegateProtocol <NSObject>
 
--(void)updateUser:(User *)user;
+-(void)addNewTime:(float) time andScore: (int) score;
 
 @end
 NS_ASSUME_NONNULL_END

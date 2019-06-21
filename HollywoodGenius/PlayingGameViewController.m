@@ -13,7 +13,6 @@
 #import "Movie.h"
 #import "AnswerManager.h"
 #import "AnswerCluster.h"
-#import "User.h"
 
 @interface PlayingGameViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -249,6 +248,7 @@
         }
         [self resetViewForNewQuestion];
     } else if ([unwindSegue.identifier isEqualToString:@"exitGame"]){
+        [self.userDelegate addNewTime:self.answerManager.timeOutput andScore:[self.score.text intValue]];
         [self.navigationController popViewControllerAnimated:NO];
     }
 }
