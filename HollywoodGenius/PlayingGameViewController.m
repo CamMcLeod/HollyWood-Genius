@@ -28,11 +28,16 @@
 -(void)importDataset;
 -(void)askNewQuestion;
 -(void)resetViewForNewQuestion;
+-(void)runTimer;
+-(void)updateTimer;
+- (IBAction)exitPopoverPressed:(id)sender;
 
 @end
 
 @implementation PlayingGameViewController {
     bool answerIsCorrect;
+    NSTimeInterval questionTime;
+    NSTimer *timer;
 }
 
 - (void)viewDidLoad {
@@ -111,7 +116,8 @@
     GuessAnswersViewCell *selectedCell = [self.collectionView cellForItemAtIndexPath:indexPath];
     
     [self.answerManager appendCluster:self.answerCluster];
-    self.timeLabel.text = [NSString stringWithFormat:@"%.1f seconds", [self.answerManager timeOutput]];
+    [timer invalidate];
+    self.timeLabel.text = [NSString stringWithFormat:@"%.1f seconds", self.answerManager.timeOutput];
 
     NSString *selectedAnswer = selectedCell.answer.titleLabel.text;
     if([selectedAnswer isEqualToString:self.answerCluster.correctAnswerName]){
@@ -170,16 +176,23 @@
     
     
     [self loadVideoWithURL:self.answerCluster.correctAnswerClip];
+    [self runTimer];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(GuessAnswersViewCell *)cell{
-    if([segue.identifier isEqualToString: @"guessAnswers"]){
+    if([segue.identifier isEqualToString: @"answerResult"]){
         
         [self setModalPresentationStyle:UIModalPresentationCurrentContext];
 //        UIViewController *dVC = [segue destinationViewController];
         
     }
     
+}
+
+- (IBAction)unwindToPlayingGameViewController:(UIStoryboardSegue *)unwindSegue {
+    UIViewController *sourceViewController = unwindSegue.sourceViewController;
+    // Use data from the view controller which initiated the unwind segue
+    [self resetViewForNewQuestion];
 }
 
 -(void)resetViewForNewQuestion {
@@ -191,6 +204,19 @@
     
     
 }
+
+
+-(void)runTimer{
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(updateTimer) userInfo:nil repeats:YES];
+}
+
+-(void)updateTimer {
+    
+    questionTime = [[NSDate date] timeIntervalSinceDate: self.answerCluster.startTime];
+    self.timeLabel.text = [NSString stringWithFormat:@"%.1f seconds", questionTime];
+    
+}
+
 //- (void)encodeWithCoder:(nonnull NSCoder *)aCoder {
 //    <#code#>
 //}
