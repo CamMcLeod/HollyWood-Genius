@@ -14,6 +14,7 @@
 #import "AnswerManager.h"
 #import "AnswerCluster.h"
 
+
 @interface PlayingGameViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 @property (weak, nonatomic) IBOutlet UIView *videoView;
@@ -60,6 +61,9 @@
     [self askNewQuestion];
     
     self.answerManager = [[AnswerManager alloc] init];
+    
+   
+    
     
 }
 
@@ -117,7 +121,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    GuessAnswersViewCell *selectedCell = [self.collectionView cellForItemAtIndexPath:indexPath];
+    GuessAnswersViewCell *selectedCell = (GuessAnswersViewCell *)[self.collectionView cellForItemAtIndexPath:indexPath];
     
     NSString *selectedAnswer = selectedCell.answer.titleLabel.text;
     if([selectedAnswer isEqualToString:self.answerCluster.correctAnswerName]){

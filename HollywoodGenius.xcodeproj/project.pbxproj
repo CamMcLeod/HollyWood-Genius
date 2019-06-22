@@ -11,6 +11,12 @@
 		063EDEDE22BAE99900136602 /* RootTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEDD22BAE99900136602 /* RootTableViewCell.m */; };
 		063EDEE122BAE9D600136602 /* PlayingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEE022BAE9D600136602 /* PlayingGameViewController.m */; };
 		063EDEE422BAF73D00136602 /* GuessAnswersViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEE322BAF73D00136602 /* GuessAnswersViewCell.m */; };
+		06C00CE022BC83D3004AE816 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C00CDF22BC83D2004AE816 /* RLMSupport.swift */; };
+		06C00CE922BC84E3004AE816 /* RealmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C00CE822BC84E3004AE816 /* RealmManager.m */; };
+		06C00CEC22BC85D3004AE816 /* MovieObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C00CEB22BC85D3004AE816 /* MovieObject.m */; };
+		06C00CEF22BC866D004AE816 /* Clip.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C00CEE22BC866D004AE816 /* Clip.m */; };
+		06C00D0C22BDAB10004AE816 /* movieStuff.csv in Resources */ = {isa = PBXBuildFile; fileRef = 06C00D0B22BDAB10004AE816 /* movieStuff.csv */; };
+		06C00D0E22BDAC3F004AE816 /* movieQuotes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 06C00D0D22BDAC3F004AE816 /* movieQuotes.csv */; };
 		6298879622BB355700E0E117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F122BAE50D00DDAD3C /* Assets.xcassets */; };
 		6298879A22BB35BB00E0E117 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6298879922BB35BB00E0E117 /* AVFoundation.framework */; };
 		6298879C22BB35BF00E0E117 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6298879B22BB35BF00E0E117 /* AVKit.framework */; };
@@ -38,6 +44,7 @@
 		62C314D722BC7F7B00FD8AA3 /* behind_alert_view.png in Resources */ = {isa = PBXBuildFile; fileRef = 62C314D622BC7F7B00FD8AA3 /* behind_alert_view.png */; };
 		62D04B5E22BD88E60079122F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 62D04B5D22BD88E60079122F /* User.m */; };
 		62D04B6022BD8E210079122F /* UserDelegateProtocol.h in Sources */ = {isa = PBXBuildFile; fileRef = 62D04B5F22BD8D930079122F /* UserDelegateProtocol.h */; };
+		8877BEEDD7979D1008FA1F8D /* Pods_HollywoodGenius.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7879FD23AE892D0FDBC3DB01 /* Pods_HollywoodGenius.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +56,17 @@
 		063EDEE022BAE9D600136602 /* PlayingGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingGameViewController.m; sourceTree = "<group>"; };
 		063EDEE222BAF73D00136602 /* GuessAnswersViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuessAnswersViewCell.h; sourceTree = "<group>"; };
 		063EDEE322BAF73D00136602 /* GuessAnswersViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuessAnswersViewCell.m; sourceTree = "<group>"; };
+		06C00CDE22BC83D2004AE816 /* HollywoodGenius-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HollywoodGenius-Bridging-Header.h"; sourceTree = "<group>"; };
+		06C00CDF22BC83D2004AE816 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		06C00CE722BC84E3004AE816 /* RealmManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmManager.h; sourceTree = "<group>"; };
+		06C00CE822BC84E3004AE816 /* RealmManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RealmManager.m; sourceTree = "<group>"; };
+		06C00CEA22BC85D3004AE816 /* MovieObject.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MovieObject.h; sourceTree = "<group>"; };
+		06C00CEB22BC85D3004AE816 /* MovieObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieObject.m; sourceTree = "<group>"; };
+		06C00CED22BC866D004AE816 /* Clip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Clip.h; sourceTree = "<group>"; };
+		06C00CEE22BC866D004AE816 /* Clip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Clip.m; sourceTree = "<group>"; };
+		06C00D0B22BDAB10004AE816 /* movieStuff.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = movieStuff.csv; sourceTree = SOURCE_ROOT; };
+		06C00D0D22BDAC3F004AE816 /* movieQuotes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = movieQuotes.csv; sourceTree = SOURCE_ROOT; };
+		0D88A7A78A7CC36FD47E3E32 /* Pods-HollywoodGenius.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HollywoodGenius.release.xcconfig"; path = "Target Support Files/Pods-HollywoodGenius/Pods-HollywoodGenius.release.xcconfig"; sourceTree = "<group>"; };
 		6298879922BB35BB00E0E117 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6298879B22BB35BF00E0E117 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		6298879D22BB35CA00E0E117 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -84,6 +102,8 @@
 		62D04B5C22BD88E60079122F /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		62D04B5D22BD88E60079122F /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		62D04B5F22BD8D930079122F /* UserDelegateProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserDelegateProtocol.h; sourceTree = "<group>"; };
+		7879FD23AE892D0FDBC3DB01 /* Pods_HollywoodGenius.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HollywoodGenius.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2D8D681069E6274BFF0BAE2 /* Pods-HollywoodGenius.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HollywoodGenius.debug.xcconfig"; path = "Target Support Files/Pods-HollywoodGenius/Pods-HollywoodGenius.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +114,7 @@
 				6298879E22BB35CA00E0E117 /* UIKit.framework in Frameworks */,
 				6298879C22BB35BF00E0E117 /* AVKit.framework in Frameworks */,
 				6298879A22BB35BB00E0E117 /* AVFoundation.framework in Frameworks */,
+				8877BEEDD7979D1008FA1F8D /* Pods_HollywoodGenius.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +127,7 @@
 				6298879D22BB35CA00E0E117 /* UIKit.framework */,
 				6298879B22BB35BF00E0E117 /* AVKit.framework */,
 				6298879922BB35BB00E0E117 /* AVFoundation.framework */,
+				7879FD23AE892D0FDBC3DB01 /* Pods_HollywoodGenius.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -116,6 +138,7 @@
 				629A83E722BAE50C00DDAD3C /* HollywoodGenius */,
 				629A83E622BAE50C00DDAD3C /* Products */,
 				6298879822BB35BA00E0E117 /* Frameworks */,
+				855F4E48617377D0625A16DF /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -130,6 +153,9 @@
 		629A83E722BAE50C00DDAD3C /* HollywoodGenius */ = {
 			isa = PBXGroup;
 			children = (
+				06C00D0D22BDAC3F004AE816 /* movieQuotes.csv */,
+				06C00D0B22BDAB10004AE816 /* movieStuff.csv */,
+				06C00CDF22BC83D2004AE816 /* RLMSupport.swift */,
 				629A83E822BAE50C00DDAD3C /* AppDelegate.h */,
 				629A83E922BAE50C00DDAD3C /* AppDelegate.m */,
 				62BFE55D22BAE87E00333A6B /* Movie.h */,
@@ -169,8 +195,24 @@
 				629887A622BB367700E0E117 /* The Princess Bride.mp4 */,
 				629887A422BB367600E0E117 /* Titanic.mp4 */,
 				629887A822BB367700E0E117 /* Zoolander.mp4 */,
+				06C00CE722BC84E3004AE816 /* RealmManager.h */,
+				06C00CE822BC84E3004AE816 /* RealmManager.m */,
+				06C00CEA22BC85D3004AE816 /* MovieObject.h */,
+				06C00CEB22BC85D3004AE816 /* MovieObject.m */,
+				06C00CED22BC866D004AE816 /* Clip.h */,
+				06C00CEE22BC866D004AE816 /* Clip.m */,
+				06C00CDE22BC83D2004AE816 /* HollywoodGenius-Bridging-Header.h */,
 			);
 			path = HollywoodGenius;
+			sourceTree = "<group>";
+		};
+		855F4E48617377D0625A16DF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2D8D681069E6274BFF0BAE2 /* Pods-HollywoodGenius.debug.xcconfig */,
+				0D88A7A78A7CC36FD47E3E32 /* Pods-HollywoodGenius.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,9 +222,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 629A83FB22BAE50D00DDAD3C /* Build configuration list for PBXNativeTarget "HollywoodGenius" */;
 			buildPhases = (
+				D2C05B6C21517655586F7D7C /* [CP] Check Pods Manifest.lock */,
 				629A83E122BAE50C00DDAD3C /* Sources */,
 				629A83E222BAE50C00DDAD3C /* Frameworks */,
 				629A83E322BAE50C00DDAD3C /* Resources */,
+				C5F9D982D44DBA2CF3D435F5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +248,7 @@
 				TargetAttributes = {
 					629A83E422BAE50C00DDAD3C = {
 						CreatedOnToolsVersion = 10.2.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -230,6 +275,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06C00D0C22BDAB10004AE816 /* movieStuff.csv in Resources */,
 				629887AB22BB367700E0E117 /* Avatar.mp4 in Resources */,
 				629887AD22BB367700E0E117 /* Snakes on a Plane.mp4 in Resources */,
 				629887AE22BB367700E0E117 /* Predator-1.mp4 in Resources */,
@@ -238,6 +284,7 @@
 				629887B622BB367700E0E117 /* Predator-2.mp4 in Resources */,
 				629887B222BB367700E0E117 /* The Princess Bride.mp4 in Resources */,
 				6298879622BB355700E0E117 /* Assets.xcassets in Resources */,
+				06C00D0E22BDAC3F004AE816 /* movieQuotes.csv in Resources */,
 				629A83F522BAE50D00DDAD3C /* LaunchScreen.storyboard in Resources */,
 				629A83F022BAE50D00DDAD3C /* Main.storyboard in Resources */,
 				629887B322BB367700E0E117 /* Airplane.mp4 in Resources */,
@@ -251,21 +298,67 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		C5F9D982D44DBA2CF3D435F5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HollywoodGenius/Pods-HollywoodGenius-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-HollywoodGenius/Pods-HollywoodGenius-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-HollywoodGenius/Pods-HollywoodGenius-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D2C05B6C21517655586F7D7C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HollywoodGenius-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		629A83E122BAE50C00DDAD3C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				62D04B6022BD8E210079122F /* UserDelegateProtocol.h in Sources */,
+				06C00CEF22BC866D004AE816 /* Clip.m in Sources */,
 				063EDEE422BAF73D00136602 /* GuessAnswersViewCell.m in Sources */,
 				063EDEDB22BAE97900136602 /* RootTableViewController.m in Sources */,
 				063EDEE122BAE9D600136602 /* PlayingGameViewController.m in Sources */,
+				06C00CEC22BC85D3004AE816 /* MovieObject.m in Sources */,
+				06C00CE922BC84E3004AE816 /* RealmManager.m in Sources */,
 				063EDEDE22BAE99900136602 /* RootTableViewCell.m in Sources */,
 				62BFE56222BAEB5800333A6B /* AnswerManager.m in Sources */,
 				629A83F822BAE50D00DDAD3C /* main.m in Sources */,
 				62D04B5E22BD88E60079122F /* User.m in Sources */,
 				62BFE56522BAEC7F00333A6B /* AnswerCluster.m in Sources */,
 				62ACDD9C22BD5E610035C522 /* PopupViewController.m in Sources */,
+				06C00CE022BC83D3004AE816 /* RLMSupport.swift in Sources */,
 				62BFE55F22BAE87E00333A6B /* Movie.m in Sources */,
 				629A83EA22BAE50D00DDAD3C /* AppDelegate.m in Sources */,
 			);
@@ -407,8 +500,10 @@
 		};
 		629A83FC22BAE50D00DDAD3C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2D8D681069E6274BFF0BAE2 /* Pods-HollywoodGenius.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79VHH58USY;
 				INFOPLIST_FILE = HollywoodGenius/Info.plist;
@@ -418,14 +513,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lighthouse.HollywoodGenius;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HollywoodGenius/HollywoodGenius-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		629A83FD22BAE50D00DDAD3C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D88A7A78A7CC36FD47E3E32 /* Pods-HollywoodGenius.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 79VHH58USY;
 				INFOPLIST_FILE = HollywoodGenius/Info.plist;
@@ -435,6 +535,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lighthouse.HollywoodGenius;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "HollywoodGenius/HollywoodGenius-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
