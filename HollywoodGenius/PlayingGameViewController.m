@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIView *videoContainerView;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
 @property (nonatomic) NSMutableArray *dummyMovieAnswerArray;
 @property (nonatomic) AnswerManager *answerManager;
@@ -46,16 +47,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIImage *backgroundImage = [UIImage imageNamed:@"background"];
-    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
-    backgroundImageView.image = backgroundImage;
-    [self.view insertSubview:backgroundImageView atIndex:0];
+//    UIImage *backgroundImage = [UIImage imageNamed:@"background"];
+//    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+//    backgroundImageView.image = backgroundImage;
+//    [self.view insertSubview:backgroundImageView atIndex:0];
     
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    
+    NSLog(@"%u", self.gameType);
     [self importDataset];
-
     answerUpdated = NO;
     
     [self askNewQuestion];
@@ -228,6 +228,7 @@
             dVC.score = self.score.text;
             dVC.time = self.timeLabel.text;
             [self.score setHidden:YES];
+            [self.scoreLabel setHidden:YES];
             [self.timeLabel setHidden:YES];
         } else {
             dVC.endOfRound = FALSE;
@@ -247,6 +248,7 @@
             self.answerManager = [[AnswerManager alloc] init];
             self.score.text = @"0";
             [self.score setHidden:NO];
+            [self.scoreLabel setHidden:NO];
             [self.timeLabel setHidden:NO];
         }
         [self resetViewForNewQuestion];

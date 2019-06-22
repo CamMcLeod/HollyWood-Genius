@@ -11,6 +11,14 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+
+typedef enum
+{
+    clipGame = 1,
+    quoteGame
+    
+}gameState;
+
 @interface RootTableViewController : UITableViewController <UserDelegateProtocol>
 
 extern const int QUESTIONS_IN_ROUND;

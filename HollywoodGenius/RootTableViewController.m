@@ -41,7 +41,7 @@ const int QUESTIONS_IN_ROUND = 5;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return 4;
 }
 
 
@@ -51,13 +51,30 @@ const int QUESTIONS_IN_ROUND = 5;
         case 0: {
             UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userInformation" forIndexPath:indexPath];
             
+            cell.textLabel.text = [NSString stringWithFormat:@"Hollywood Genius"];
+            UIFont *font = cell.textLabel.font;
+            cell.textLabel.font = [font fontWithSize:40];
+            [cell.textLabel setTextAlignment:NSTextAlignmentCenter];
+            [cell sizeToFit];
+            [cell.layer setMasksToBounds: YES];
+            [cell.layer setBorderWidth:4.0];
+            [cell.layer setCornerRadius: 10];
+            return cell;
+            break;
+        }
+        case 3: {
+            UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"userInformation" forIndexPath:indexPath];
+            
             cell.textLabel.text = [NSString stringWithFormat:@"User Total Score: %d\nUser Average Time: %.fs\nUser Best Perfect Time: %.fs\nUser Games Played: %lu",
                                    self.user.totalScore,
                                    self.user.averageTime,
                                    self.user.perfectBestTime,
                                    (unsigned long)self.user.gamesPlayed ];
             
-            [cell setBackgroundColor: [UIColor purpleColor]];
+            [cell.layer setMasksToBounds: YES];
+            [cell.layer setBorderWidth:4.0];
+            [cell.layer setCornerRadius: 10];
+
             [cell sizeToFit];
             return cell;
             break;
@@ -66,14 +83,12 @@ const int QUESTIONS_IN_ROUND = 5;
             
             RootTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"playGame" forIndexPath:indexPath];
             cell.gameType.text = @"Guess the Movie from a Clip!";
-            [cell setBackgroundColor: [UIColor lightGrayColor]];
             return cell;
             break;
         }
         case 2: {
             RootTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"playGame" forIndexPath:indexPath];
             cell.gameType.text = @"Guess the Movie from a Quote!";
-            [cell setBackgroundColor: [UIColor lightGrayColor]];
             return cell;
             break;
         }
@@ -138,6 +153,16 @@ const int QUESTIONS_IN_ROUND = 5;
             PlayingGameViewController *dVC = [segue destinationViewController];
             dVC.user = self.user;
             dVC.userDelegate = self;
+            NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+            
+            switch (indexPath.row) {
+                case 1: dVC.gameType = clipGame;
+                    break;
+                case 2: dVC.gameType = quoteGame;
+                    break;
+                default:
+                    break;
+            }
             
         }
     }
