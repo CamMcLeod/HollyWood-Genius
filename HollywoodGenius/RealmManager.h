@@ -25,7 +25,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSMutableArray *)parseCSVStringIntoArray:(NSString *)csvString;
 - (NSArray *)retrieveMovieData;
 - (NSArray *)retrieveRandomQuoteMovieAndUID;
-- (NSString *)matchQuoteWithMovie;
+- (NSString *)matchQuoteWithMovie:(NSString *)uid;
 - (void)addScoreData:(int)totalScore averageTime:(NSString *)avgTime andUUID:(NSString *)uuid;
 - (float)retrieveBestTime;
 

@@ -79,7 +79,7 @@
     NSArray *quoteKeys = [[NSArray alloc] init];
     NSString *randomQuote = quoteKeys[arc4random_uniform((int)[quoteKeys count])];
     NSString *randomuid = chosenClipDictionary[randomQuote];
-    NSString *movieName = [self matchQuoteWithMovie];
+    NSString *movieName = [self matchQuoteWithMovie:randomuid];
     NSArray *finalArray = @[randomQuote, movieName, randomuid];
     return finalArray;
 }
