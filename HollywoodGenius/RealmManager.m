@@ -44,7 +44,9 @@
 
 
 - (void)prepareData {
-    NSString *strFile = [NSString stringWithContentsOfFile:@"/Users/EkamSingh/Desktop/LighthouseLabs/CSVTesting/movieQuotes.csv" encoding:NSUTF8StringEncoding error:nil];
+//    NSString *strFile = [[NSBundle mainBundle]
+//                              pathForResource:@"movieQuotes" ofType:@"csv"];
+    NSString *strFile = [NSString stringWithContentsOfFile:@"/Users/EkamSingh/Desktop/LighthouseLabs/HollyWood-Genius/movieQuotes.csv" encoding:NSUTF8StringEncoding error:NULL];
     if (!strFile) {
         NSLog(@"Error reading file.");
     }

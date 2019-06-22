@@ -15,7 +15,8 @@
 		06C00CE922BC84E3004AE816 /* RealmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C00CE822BC84E3004AE816 /* RealmManager.m */; };
 		06C00CEC22BC85D3004AE816 /* MovieObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C00CEB22BC85D3004AE816 /* MovieObject.m */; };
 		06C00CEF22BC866D004AE816 /* Clip.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C00CEE22BC866D004AE816 /* Clip.m */; };
-		06C00D0622BD6548004AE816 /* movieQuotes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 06C00D0522BD6548004AE816 /* movieQuotes.csv */; };
+		06C00D0C22BDAB10004AE816 /* movieStuff.csv in Resources */ = {isa = PBXBuildFile; fileRef = 06C00D0B22BDAB10004AE816 /* movieStuff.csv */; };
+		06C00D0E22BDAC3F004AE816 /* movieQuotes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 06C00D0D22BDAC3F004AE816 /* movieQuotes.csv */; };
 		6298879622BB355700E0E117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F122BAE50D00DDAD3C /* Assets.xcassets */; };
 		6298879A22BB35BB00E0E117 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6298879922BB35BB00E0E117 /* AVFoundation.framework */; };
 		6298879C22BB35BF00E0E117 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6298879B22BB35BF00E0E117 /* AVKit.framework */; };
@@ -59,7 +60,8 @@
 		06C00CEB22BC85D3004AE816 /* MovieObject.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MovieObject.m; sourceTree = "<group>"; };
 		06C00CED22BC866D004AE816 /* Clip.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Clip.h; sourceTree = "<group>"; };
 		06C00CEE22BC866D004AE816 /* Clip.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Clip.m; sourceTree = "<group>"; };
-		06C00D0522BD6548004AE816 /* movieQuotes.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = movieQuotes.csv; sourceTree = "<group>"; };
+		06C00D0B22BDAB10004AE816 /* movieStuff.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = movieStuff.csv; sourceTree = SOURCE_ROOT; };
+		06C00D0D22BDAC3F004AE816 /* movieQuotes.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = movieQuotes.csv; sourceTree = SOURCE_ROOT; };
 		0D88A7A78A7CC36FD47E3E32 /* Pods-HollywoodGenius.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HollywoodGenius.release.xcconfig"; path = "Target Support Files/Pods-HollywoodGenius/Pods-HollywoodGenius.release.xcconfig"; sourceTree = "<group>"; };
 		6298879922BB35BB00E0E117 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6298879B22BB35BF00E0E117 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
@@ -123,7 +125,6 @@
 		629A83DC22BAE50C00DDAD3C = {
 			isa = PBXGroup;
 			children = (
-				06C00D0522BD6548004AE816 /* movieQuotes.csv */,
 				629A83E722BAE50C00DDAD3C /* HollywoodGenius */,
 				629A83E622BAE50C00DDAD3C /* Products */,
 				6298879822BB35BA00E0E117 /* Frameworks */,
@@ -142,6 +143,8 @@
 		629A83E722BAE50C00DDAD3C /* HollywoodGenius */ = {
 			isa = PBXGroup;
 			children = (
+				06C00D0D22BDAC3F004AE816 /* movieQuotes.csv */,
+				06C00D0B22BDAB10004AE816 /* movieStuff.csv */,
 				06C00CDF22BC83D2004AE816 /* RLMSupport.swift */,
 				629A83E822BAE50C00DDAD3C /* AppDelegate.h */,
 				629A83E922BAE50C00DDAD3C /* AppDelegate.m */,
@@ -256,7 +259,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				06C00D0622BD6548004AE816 /* movieQuotes.csv in Resources */,
+				06C00D0C22BDAB10004AE816 /* movieStuff.csv in Resources */,
 				629887AB22BB367700E0E117 /* Avatar.mp4 in Resources */,
 				629887AD22BB367700E0E117 /* Snakes on a Plane.mp4 in Resources */,
 				629887AE22BB367700E0E117 /* Predator-1.mp4 in Resources */,
@@ -264,6 +267,7 @@
 				629887B622BB367700E0E117 /* Predator-2.mp4 in Resources */,
 				629887B222BB367700E0E117 /* The Princess Bride.mp4 in Resources */,
 				6298879622BB355700E0E117 /* Assets.xcassets in Resources */,
+				06C00D0E22BDAC3F004AE816 /* movieQuotes.csv in Resources */,
 				629A83F522BAE50D00DDAD3C /* LaunchScreen.storyboard in Resources */,
 				629A83F022BAE50D00DDAD3C /* Main.storyboard in Resources */,
 				629887B322BB367700E0E117 /* Airplane.mp4 in Resources */,
