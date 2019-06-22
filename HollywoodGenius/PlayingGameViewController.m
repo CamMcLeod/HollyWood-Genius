@@ -102,8 +102,7 @@
     playerController.player = videoPlayer;
     AVPlayerLayer *playerLayer = [[AVPlayerLayer alloc] init];
     [playerLayer setPlayer:videoPlayer];
-    playerLayer.frame = CGRectOffset(self.videoContainerView.frame, 0, 0);
-    
+    playerLayer.frame = self.videoContainerView.frame;
     [self.videoContainerView.layer addSublayer:playerLayer];
     [videoPlayer play];
     

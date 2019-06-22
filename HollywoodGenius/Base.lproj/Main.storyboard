@@ -37,7 +37,6 @@
                                             <size key="shadowOffset" width="1" height="1"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="playGame" id="rhC-nb-sd9" customClass="RootTableViewCell">
@@ -195,7 +194,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nB1-eQ-syY">
-                                <rect key="frame" x="0.0" y="468" width="414" height="65"/>
+                                <rect key="frame" x="0.0" y="489" width="414" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="jmY-bB-QvW"/>
                                 </constraints>
@@ -204,7 +203,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="6zw-A6-tUt">
-                                <rect key="frame" x="20" y="553" width="374" height="289"/>
+                                <rect key="frame" x="20" y="574" width="374" height="268"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ELe-Cc-5jZ">
                                     <size key="itemSize" width="100" height="100"/>
@@ -243,14 +242,14 @@
                                 </cells>
                             </collectionView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6LW-o7-axx">
-                                <rect key="frame" x="0.0" y="134.5" width="414" height="313.5"/>
+                                <rect key="frame" x="0.0" y="158.5" width="414" height="310.5"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTs-Cq-ZDD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="313.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="310.5"/>
                                     </containerView>
                                 </subviews>
-                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="6LW-o7-axx" secondAttribute="height" multiplier="4:3" id="1Cx-st-onq"/>
                                     <constraint firstItem="PTs-Cq-ZDD" firstAttribute="top" secondItem="6LW-o7-axx" secondAttribute="top" id="3kn-tV-gdm"/>
                                     <constraint firstItem="PTs-Cq-ZDD" firstAttribute="centerY" secondItem="6LW-o7-axx" secondAttribute="centerY" id="4Uv-An-53I"/>
                                     <constraint firstItem="PTs-Cq-ZDD" firstAttribute="height" relation="lessThanOrEqual" secondItem="6LW-o7-axx" secondAttribute="height" id="hXF-Kp-pKF"/>
@@ -260,13 +259,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJr-ZR-Atq">
-                                <rect key="frame" x="20" y="78.5" width="90.5" height="36"/>
+                                <rect key="frame" x="20" y="102.5" width="90.5" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.45009386540000001" green="0.98132258650000004" blue="0.4743030667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lem-9L-3nR">
-                                <rect key="frame" x="120.5" y="78.5" width="20.5" height="36"/>
+                                <rect key="frame" x="120.5" y="102.5" width="20.5" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -275,8 +274,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6zw-A6-tUt" firstAttribute="leading" secondItem="x6H-bG-ueL" secondAttribute="leading" constant="20" id="1nW-5G-zUH"/>
-                            <constraint firstItem="6LW-o7-axx" firstAttribute="height" secondItem="oA5-Pz-kYo" secondAttribute="height" multiplier="0.35" id="Atq-xT-aTT"/>
-                            <constraint firstItem="6LW-o7-axx" firstAttribute="centerY" secondItem="oA5-Pz-kYo" secondAttribute="centerY" multiplier="0.65" id="DDY-I0-6wY"/>
+                            <constraint firstItem="6LW-o7-axx" firstAttribute="centerY" secondItem="oA5-Pz-kYo" secondAttribute="centerY" multiplier="0.7" id="DDY-I0-6wY"/>
                             <constraint firstItem="6LW-o7-axx" firstAttribute="top" secondItem="NJr-ZR-Atq" secondAttribute="bottom" constant="20" id="DEz-qC-Cyi"/>
                             <constraint firstItem="6zw-A6-tUt" firstAttribute="centerX" secondItem="oA5-Pz-kYo" secondAttribute="centerX" id="GzY-Yv-Izg"/>
                             <constraint firstItem="x6H-bG-ueL" firstAttribute="trailing" secondItem="6zw-A6-tUt" secondAttribute="trailing" constant="20" id="N9O-cv-Udj"/>

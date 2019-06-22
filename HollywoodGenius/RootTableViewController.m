@@ -21,7 +21,7 @@
 
 @implementation RootTableViewController
 
-const int QUESTIONS_IN_ROUND = 10;
+const int QUESTIONS_IN_ROUND = 5;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
