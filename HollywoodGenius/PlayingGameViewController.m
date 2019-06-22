@@ -42,7 +42,6 @@
 
 @implementation PlayingGameViewController {
     bool answerIsCorrect;
-    bool answerUpdated;
     NSTimeInterval questionTime;
     NSTimer *timer;
 }
@@ -59,8 +58,6 @@
     NSLog(@"%u", self.gameType);
     
     [self importDataset];
-    
-    answerUpdated = NO;
     
     [self askNewQuestion];
     
@@ -297,41 +294,52 @@
         Movie *movie0 = [[Movie alloc] initWithTitle:@"Airplane" andClips:@[path0]];
         self.dummyMovieAnswerArray[0] = movie0;
         
-        NSURL *path1 = [mainBundle URLForResource:@"Avatar" withExtension:@"mp4"];
+        loadURL = [mainBundle URLForResource:@"Avatar" withExtension:@"mp4"];
+        NSString *path1 = [loadURL absoluteString];
         Movie *movie1 = [[Movie alloc] initWithTitle:@"Avatar" andClips:@[path1]];
         self.dummyMovieAnswerArray[1] = movie1;
         
-        NSURL *path2 = [mainBundle URLForResource:@"Deadpool" withExtension:@"mp4"];
+        loadURL = [mainBundle URLForResource:@"Deadpool" withExtension:@"mp4"];
+        NSString *path2 = [loadURL absoluteString];
         Movie *movie2 = [[Movie alloc] initWithTitle:@"Deadpool" andClips:@[path2]];
         self.dummyMovieAnswerArray[2] = movie2;
         
-        NSURL *path3 = [mainBundle URLForResource:@"Indiana Jones and the Last Crusade" withExtension:@"mp4"];
+        loadURL = [mainBundle URLForResource:@"Indiana Jones and the Last Crusade" withExtension:@"mp4"];
+        NSString *path3 = [loadURL absoluteString];
         Movie *movie3 = [[Movie alloc] initWithTitle:@"Indiana Jones and the Last Crusade" andClips:@[path3]];
         self.dummyMovieAnswerArray[3] = movie3;
         
-        NSURL *path4 = [mainBundle URLForResource:@"Predator-1" withExtension:@"mp4"];
-        NSURL *path5 = [mainBundle URLForResource:@"Predator-2" withExtension:@"mp4"];
-        NSURL *path6 = [mainBundle URLForResource:@"Predator-3" withExtension:@"mp4"];
+        NSURL *loadURL1 = [mainBundle URLForResource:@"Predator-1" withExtension:@"mp4"];
+        NSURL *loadURL2 = [mainBundle URLForResource:@"Predator-2" withExtension:@"mp4"];
+        NSURL *loadURL3 = [mainBundle URLForResource:@"Predator-3" withExtension:@"mp4"];
+        NSString *path4 = [loadURL1 absoluteString];
+        NSString *path5 = [loadURL2 absoluteString];
+        NSString *path6 = [loadURL3 absoluteString];
         Movie *movie4 = [[Movie alloc] initWithTitle:@"Predator" andClips:@[path4, path5, path6]];
         self.dummyMovieAnswerArray[4] = movie4;
         
-        NSURL *path7 = [mainBundle URLForResource:@"Snakes on a Plane" withExtension:@"mp4"];
+        loadURL = [mainBundle URLForResource:@"Snakes on a Plane" withExtension:@"mp4"];
+        NSString *path7 = [loadURL absoluteString];
         Movie *movie5 = [[Movie alloc] initWithTitle:@"Snakes on a Plane" andClips:@[path7]];
         self.dummyMovieAnswerArray[5] = movie5;
         
-        NSURL *path8 = [mainBundle URLForResource:@"The Big Lebowski" withExtension:@"mp4"];
+        loadURL = [mainBundle URLForResource:@"The Big Lebowski" withExtension:@"mp4"];
+        NSString *path8 = [loadURL absoluteString];
         Movie *movie6 = [[Movie alloc] initWithTitle:@"The Big Lebowski" andClips:@[path8]];
         self.dummyMovieAnswerArray[6] = movie6;
         
-        NSURL *path9 = [mainBundle URLForResource:@"The Princess Bride" withExtension:@"mp4"];
+        loadURL = [mainBundle URLForResource:@"The Princess Bride" withExtension:@"mp4"];
+        NSString *path9 = [loadURL absoluteString];
         Movie *movie7 = [[Movie alloc] initWithTitle:@"The Princess Bride" andClips:@[path9]];
         self.dummyMovieAnswerArray[7] = movie7;
         
-        NSURL *path10 = [mainBundle URLForResource:@"Titanic" withExtension:@"mp4"];
+        loadURL = [mainBundle URLForResource:@"Titanic" withExtension:@"mp4"];
+        NSString *path10 = [loadURL absoluteString];
         Movie *movie8 = [[Movie alloc] initWithTitle:@"Titanic" andClips:@[path10]];
         self.dummyMovieAnswerArray[8] = movie8;
         
-        NSURL *path11 = [mainBundle URLForResource:@"Zoolander" withExtension:@"mp4"];
+        loadURL = [mainBundle URLForResource:@"Zoolander" withExtension:@"mp4"];
+        NSString *path11 = [loadURL absoluteString];
         Movie *movie9 = [[Movie alloc] initWithTitle:@"Zoolander" andClips:@[path11]];
         self.dummyMovieAnswerArray[9] = movie9;
         
