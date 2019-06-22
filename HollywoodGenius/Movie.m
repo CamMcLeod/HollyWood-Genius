@@ -15,6 +15,7 @@
     self = [super init];
     if (self) {
         self.clips = [[NSMutableArray alloc] init];
+        self.quotes = [[NSMutableArray alloc] init];
     }
     return self;
 }

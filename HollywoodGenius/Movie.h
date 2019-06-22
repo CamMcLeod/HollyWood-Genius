@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property NSString *title;
 @property NSMutableArray *clips;
+@property NSMutableArray *quotes;
 
 - (instancetype)initWithTitle:(NSString *)title andClips: (NSArray *)clips;
 
