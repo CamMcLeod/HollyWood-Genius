@@ -181,7 +181,7 @@
     if ([self.answerManager.clipsInRound count] > 0){
         do {
             self.answerCluster = [[AnswerCluster alloc] initWithCluster:movies];
-            int clipIndex = [self.answerManager.clipsInRound indexOfObjectIdenticalTo:self.answerCluster.correctAnswerClip inRange:NSMakeRange(0,[self.answerManager.clipsInRound count])];
+            int clipIndex = (int)[self.answerManager.clipsInRound indexOfObjectIdenticalTo:self.answerCluster.correctAnswerClip inRange:NSMakeRange(0,[self.answerManager.clipsInRound count])];
             if ( clipIndex < 0){
                 clipIsUsed = NO;
             }

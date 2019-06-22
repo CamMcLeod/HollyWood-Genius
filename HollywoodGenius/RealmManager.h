@@ -9,20 +9,25 @@
 #import <Foundation/Foundation.h>
 #import "MovieObject.h"
 #import "Clip.h"
+#import "ScoreHistory.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface RealmManager : NSObject
 
 @property (nonatomic) NSArray *movieObjectList;
-@property (nonatomic) NSArray *clipList; 
+@property (nonatomic) NSArray *clipList;
+@property RLMRealm *realm; 
 
 - (void)createInitialData;
 
 - (void)prepareData;
 - (NSMutableArray *)parseCSVStringIntoArray:(NSString *)csvString;
-//- (RLMResults *)getMovieObject;
-//- (void)getClip;
+- (NSArray *)retrieveMovieData;
+- (NSArray *)retrieveRandomQuoteMovieAndUID;
+- (NSString *)matchQuoteWithMovie;
+- (void)addScoreData:(int)totalScore averageTime:(NSString *)avgTime andUUID:(NSString *)uuid;
+- (float)retrieveBestTime;
 
 @end
 

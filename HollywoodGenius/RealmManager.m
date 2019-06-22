@@ -15,36 +15,88 @@
 {
     self = [super init];
     if (self) {
+        _realm = [RLMRealm defaultRealm];
     }
     return self;
 }
 
 
 - (void)createInitialData {
-    RLMRealm *realm = [RLMRealm defaultRealm];
-    if (realm.isEmpty) {
+    if (self.realm.isEmpty) {
         [self prepareData]; 
-        [realm beginWriteTransaction];
+        [self.realm beginWriteTransaction];
         
         for (int i = 0; i < [self.movieObjectList count]; i++) {
             MovieObject *movie = [[MovieObject alloc] initWithTitle:self.movieObjectList[i] andUID:[[NSUUID UUID] UUIDString]];
-            [realm addObject:movie];
+            [self.realm addObject:movie];
             for (NSString *movieQuote in self.clipList[i]) {
                 Clip *clip = [[Clip alloc] initWithTitle: movie.title andQuote: movieQuote andUID:movie.uuid];
-                [realm addObject:clip];
+                [self.realm addObject:clip];
             }
         }
-        
-        [realm commitWriteTransaction];
+        [self.realm commitWriteTransaction];
+    
     }
     
 }
 
-//RLMResults<Dog *> *dogs = [Dog allObjects]; // retrieves all Dogs from the default Realm
+- (void)addScoreData:(int)totalScore averageTime:(NSString *)avgTime andUUID:(NSString *)uuid {
+    [self.realm beginWriteTransaction];
+    ScoreHistory *scoreHistory = [[ScoreHistory alloc] initWithTotalScore:totalScore andAverageTime:avgTime andUUID:uuid];
+    [self.realm addObject:scoreHistory];
+    [self.realm commitWriteTransaction]; 
+}
 
-//- (void)getMovieObject {
-//    return [MovieObject allObjects];
-//}
+
+- (float)retrieveBestTime {
+    RLMResults<ScoreHistory *> *timeList = [ScoreHistory allObjects];
+    float bestTime = 0;
+    for (ScoreHistory *scoreHistory in timeList) {
+        float tmpValue = [scoreHistory.averageTime floatValue];
+        if (tmpValue <= bestTime) {
+            bestTime = tmpValue;
+        }
+    }
+    return bestTime;
+}
+
+- (NSArray *)retrieveMovieData {
+    RLMResults<MovieObject *> *movieList = [MovieObject allObjects];
+    NSMutableArray *movieListArray = [[NSMutableArray alloc] init];
+    for (MovieObject *movie in movieList) {
+        [movieListArray addObject: movie.title];
+    }
+    return [movieListArray copy];
+    
+}
+
+- (NSArray *)retrieveRandomQuoteMovieAndUID {
+    RLMResults<Clip *> *clipList = [Clip allObjects];
+    NSMutableDictionary *chosenClipDictionary = [[NSMutableDictionary alloc] init];
+    for (Clip *quote in clipList) {
+        [chosenClipDictionary setObject:quote.uuid forKey:quote.quote];
+    }
+    NSArray *quoteKeys = [[NSArray alloc] init];
+    NSString *randomQuote = quoteKeys[arc4random_uniform((int)[quoteKeys count])];
+    NSString *randomuid = chosenClipDictionary[randomQuote];
+    NSString *movieName = [self matchQuoteWithMovie];
+    NSArray *finalArray = @[randomQuote, movieName, randomuid];
+    return finalArray;
+}
+
+- (NSString *)matchQuoteWithMovie:(NSString *)uid {
+    RLMResults<MovieObject *> *movieList = [MovieObject allObjects];
+    for (MovieObject *movie in movieList) {
+        if ([movie.uuid isEqualToString:uid]) {
+            return movie.title;
+        }
+    }
+    return @"No match found";
+}
+
+
+
+
 
 - (void)prepareData {
 //    NSString *strFile = [[NSBundle mainBundle]
