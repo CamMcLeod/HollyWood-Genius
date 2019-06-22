@@ -11,7 +11,7 @@
 #import "Movie.h"
 #import "AnswerManager.h"
 #import "AnswerCluster.h"
-#import "RealmManager.h"
+
 
 @interface PlayingGameViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -50,11 +50,7 @@
     
     self.answerManager = [[AnswerManager alloc] init];
     
-    RealmManager *realmManager = [[RealmManager alloc] init];
-    
-    [realmManager createInitialData];
-    
-    NSLog(@"%@",[RLMRealmConfiguration defaultConfiguration].fileURL);
+   
     
     
 }
