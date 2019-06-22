@@ -23,6 +23,7 @@
 @implementation RootTableViewController
 
 const int QUESTIONS_IN_ROUND = 5;
+const int ANSWERS_ON_SCREEN = 4;
 
 - (void)viewDidLoad {
     [super viewDidLoad];

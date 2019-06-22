@@ -27,12 +27,12 @@
     return self;
 }
 
-- (void) setCorrectAnswerClip:(NSURL *)correctMovieClip{
+- (void) setCorrectAnswerClip:(NSString *)correctMovieClip{
     _correctAnswerClip = correctMovieClip;
 }
 
 // overriding getter to return end date when answer is got
-- (NSURL *)correctAnswerClip {
+- (NSString *)correctAnswerClip {
     _endTime = [NSDate date];
     return _correctAnswerClip;
 }

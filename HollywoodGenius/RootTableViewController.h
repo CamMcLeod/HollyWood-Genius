@@ -22,6 +22,7 @@ typedef enum
 @interface RootTableViewController : UITableViewController <UserDelegateProtocol>
 
 extern const int QUESTIONS_IN_ROUND;
+extern const int ANSWERS_ON_SCREEN;
 
 @end
 

@@ -36,6 +36,7 @@
 -(void)runTimer;
 -(void)updateTimer;
 -(void)createAnswerCluster;
+-(void)createDatabaseAnswerCluster;
 
 @end
 
@@ -81,7 +82,7 @@
     }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 4;
+    return ANSWERS_ON_SCREEN;
 }
 
 
@@ -159,8 +160,19 @@
 
 -(void)askNewQuestion {
     
-    [self createAnswerCluster];
-    [self loadVideoWithURL:self.answerCluster.correctAnswerClip];
+    if (self.gameType == clipGame) {
+        
+        [self createAnswerCluster];
+        [self loadVideoWithURL:[NSURL URLWithString:self.answerCluster.correctAnswerClip] ];
+        
+    } else if (self.gameType == quoteGame) {
+        
+        [self createDatabaseAnswerCluster];
+        [self loadQuoteWithString:self.answerCluster.correctAnswerClip];
+        
+    }
+
+    
     [self runTimer];
     
 }
@@ -178,7 +190,7 @@
         int movieIndex = [movies indexOfObjectIdenticalTo:movie inRange:NSMakeRange(0,[movies count])];
         if ( movieIndex < 0){
             [movies addObject:movie];
-            if([movies count] == 4) {
+            if([movies count] == ANSWERS_ON_SCREEN) {
                 break;
             }
         }
@@ -196,6 +208,10 @@
     } else {
         self.answerCluster = [[AnswerCluster alloc] initWithCluster:movies];
     }
+}
+
+-(void)createDatabaseAnswerCluster {
+    // fill with algorithm to pull movies randomly from database
 }
 
 -(void)resetViewForNewQuestion {
@@ -275,7 +291,9 @@
         self.dummyMovieAnswerArray = [[NSMutableArray alloc] initWithCapacity:10];
         
         NSBundle *mainBundle = [NSBundle mainBundle];
-        NSURL *path0 = [mainBundle URLForResource:@"Airplane" withExtension:@"mp4"];
+        
+        NSURL *loadURL = [mainBundle URLForResource:@"Airplane" withExtension:@"mp4"];
+        NSString *path0 = [loadURL absoluteString];
         Movie *movie0 = [[Movie alloc] initWithTitle:@"Airplane" andClips:@[path0]];
         self.dummyMovieAnswerArray[0] = movie0;
         
@@ -317,10 +335,7 @@
         Movie *movie9 = [[Movie alloc] initWithTitle:@"Zoolander" andClips:@[path11]];
         self.dummyMovieAnswerArray[9] = movie9;
         
-    } else if (self.gameType == quoteGame) {
-        
     }
-    
     
 }
 @end
