@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)prepareData;
 - (NSMutableArray *)parseCSVStringIntoArray:(NSString *)csvString;
+//- (RLMResults *)getMovieObject;
+//- (void)getClip;
 
 @end
 

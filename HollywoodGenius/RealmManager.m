@@ -20,7 +20,6 @@
 }
 
 
-
 - (void)createInitialData {
     RLMRealm *realm = [RLMRealm defaultRealm];
     if (realm.isEmpty) {
@@ -41,7 +40,11 @@
     
 }
 
+//RLMResults<Dog *> *dogs = [Dog allObjects]; // retrieves all Dogs from the default Realm
 
+//- (void)getMovieObject {
+//    return [MovieObject allObjects];
+//}
 
 - (void)prepareData {
 //    NSString *strFile = [[NSBundle mainBundle]
