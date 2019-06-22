@@ -14,9 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property float averageTime;
 @property int totalScore;
-@property int bestTime;
-@property NSMutableArray *record;
-@property int gamesPlayed;
+@property float perfectBestTime;
+@property NSMutableArray *allTimes;
+@property NSMutableArray *allScores;
+@property NSUInteger gamesPlayed;
 
 @end
 

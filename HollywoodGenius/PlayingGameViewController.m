@@ -248,7 +248,9 @@
         }
         [self resetViewForNewQuestion];
     } else if ([unwindSegue.identifier isEqualToString:@"exitGame"]){
-        [self.userDelegate addNewTime:self.answerManager.timeOutput andScore:[self.score.text intValue]];
+        if ([self.answerManager.clipsInRound count] == QUESTIONS_IN_ROUND){
+            [self.userDelegate addNewTime:self.answerManager.timeOutput andScore:[self.score.text intValue]];
+        }
         [self.navigationController popViewControllerAnimated:NO];
     }
 }
