@@ -100,8 +100,8 @@
     cell.answer.titleLabel.numberOfLines = 2;//    cell.answer.titleLabel.lineBreakMode = NSLineBreakByClipping;
     cell.answer.titleLabel.adjustsFontSizeToFitWidth = YES;
     cell.answer.contentScaleFactor = 1;
-    [cell setBackgroundColor: [UIColor lightGrayColor]];
-    [cell.answer setBackgroundColor:[UIColor lightGrayColor]];
+    cell.backgroundColor = [UIColor darkTextColor];
+    [cell.answer setBackgroundColor:[UIColor darkTextColor]];
     
 //    cell.answer.titleLabel.adjustsFontSizeToFitWidth = YES;
     return cell;
@@ -128,14 +128,12 @@
     UILabel *quoteLabel = [[UILabel alloc] initWithFrame:quoteFrame];
     [self.videoContainerView addSubview:quoteLabel];
     quoteLabel.text = self.answerCluster.correctAnswerClip;
-    quoteLabel.textColor = [UIColor colorWithRed:255/255.0 green:215/255.0 blue:0/255.0 alpha:1.0];
-    quoteLabel.backgroundColor = [UIColor darkGrayColor];
+    quoteLabel.textColor = [UIColor colorWithRed:255/255.0 green:122/255.0 blue:0/255.0 alpha:1.0];
     [quoteLabel setNumberOfLines:4];
     [quoteLabel setTextAlignment:NSTextAlignmentCenter];
     UIFont *font = quoteLabel.font;
     quoteLabel.font = [font fontWithSize:30];
     [quoteLabel setCenter:self.videoContainerView.center];
-    
     
 }
 

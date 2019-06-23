@@ -42,8 +42,8 @@
         [self.congratsLabel setHidden:NO];
         
     } else {
-        [self.continueButton setTitle:@"Play Next Clip" forState:UIControlStateNormal];
-        [self.continueButton setTitle:@"Play Next Clip" forState:UIControlStateSelected];
+        [self.continueButton setTitle:@"Next Question" forState:UIControlStateNormal];
+        [self.continueButton setTitle:@"Next Question" forState:UIControlStateSelected];
         [self.scoreLabel setHidden:YES];
         [self.timeLabel setHidden:YES];
         [self.congratsLabel setHidden:YES];
