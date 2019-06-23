@@ -6,6 +6,7 @@
 //  Copyright © 2019 Cameron Mcleod. All rights reserved.
 //
 
+#import "RootTableViewController.h"
 #import "AnswerCluster.h"
 #import "AnswerManager.h"
 #import "Movie.h"
@@ -18,7 +19,7 @@
         _startTime = [NSDate date];
         _movies = [[NSMutableArray alloc] initWithArray:movieCluster];
         
-        Movie *movie = movieCluster[arc4random_uniform(4)];
+        Movie *movie = movieCluster[arc4random_uniform(ANSWERS_ON_SCREEN)];
         NSArray *clips = movie.clips;
         _correctAnswerName = movie.title;
         _correctAnswerClip = clips[arc4random_uniform([clips count])];

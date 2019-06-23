@@ -13,6 +13,7 @@
 #import "Movie.h"
 #import "AnswerManager.h"
 #import "AnswerCluster.h"
+#import "RealmManager.h"
 
 
 @interface PlayingGameViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
@@ -27,6 +28,7 @@
 @property (nonatomic) NSMutableArray *dummyMovieAnswerArray;
 @property (nonatomic) AnswerManager *answerManager;
 @property (nonatomic) AnswerCluster *answerCluster;
+@property RealmManager *realManager;
 
 -(void)loadVideoWithURL:(NSURL *) pathURL;
 -(void)loadQuoteWithString:(NSString *) quoteString;
@@ -58,12 +60,17 @@
     NSLog(@"%u", self.gameType);
     
     [self importDataset];
-    
+    self.realManager = [[RealmManager alloc] init];
+    [self.realManager createInitialData];
     [self askNewQuestion];
     
     self.answerManager = [[AnswerManager alloc] init];
     
    
+    
+  
+    
+//   NSLog(@"%@",[RLMRealmConfiguration defaultConfiguration].fileURL);
     
     
 }
@@ -114,6 +121,11 @@
 }
 
 -(void)loadQuoteWithString:(NSString *) quoteString {
+    UILabel *quoteLabel = [[UILabel alloc] initWithFrame:self.videoView.frame];
+    [self.videoView addSubview:quoteLabel];
+    quoteLabel.text = self.answerCluster.correctAnswerClip;
+    quoteLabel.backgroundColor = [UIColor whiteColor];
+    
     
 }
 
@@ -209,6 +221,56 @@
 
 -(void)createDatabaseAnswerCluster {
     // fill with algorithm to pull movies randomly from database
+    Movie *movie = [[Movie alloc] init];
+    NSMutableArray *movies = [[NSMutableArray alloc] init];
+    bool isMatch = NO;
+    
+    while ([movies count] < ANSWERS_ON_SCREEN) {
+        NSArray *tmp =  [self.realManager retrieveRandomQuoteMovieAndUID];
+        NSString *theMovie =  tmp[1];
+        NSString *quote = tmp[0];
+        if ([movies count] == 0) {
+            NSArray *tmp =  [self.realManager retrieveRandomQuoteMovieAndUID];
+            NSString *theMovie = tmp[1];
+            NSString *quote = tmp[0];
+            movie = [[Movie alloc] initWithTitle:theMovie andClips:@[quote]];
+            [movies addObject:movie];
+            NSLog(@"%@", theMovie);
+        } else {
+            for (int i = 0; i < [movies count]; i++) {
+                if ([theMovie isEqualToString:[movies[i] title]]) {
+                    isMatch = YES;
+                    break;
+                }
+                
+            }
+            if (!isMatch) {
+                movie = [[Movie alloc] initWithTitle:theMovie andClips:@[quote]];
+                [movies addObject:movie];
+                NSLog(@"%@", theMovie);
+                isMatch = NO;
+            }
+            
+        }
+
+       
+    }
+    
+    bool clipIsUsed = YES;
+    if ([self.answerManager.clipsInRound count] > 0){
+        do {
+            self.answerCluster = [[AnswerCluster alloc] initWithCluster:movies];
+            int clipIndex = (int)[self.answerManager.clipsInRound indexOfObjectIdenticalTo:self.answerCluster.correctAnswerClip inRange:NSMakeRange(0,[self.answerManager.clipsInRound count])];
+            if ( clipIndex < 0){
+                clipIsUsed = NO;
+            }
+        } while (clipIsUsed);
+    } else {
+        self.answerCluster = [[AnswerCluster alloc] initWithCluster:movies];
+    }
+    
+    
+//
 }
 
 -(void)resetViewForNewQuestion {

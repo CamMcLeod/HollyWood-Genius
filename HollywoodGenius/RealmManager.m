@@ -76,7 +76,8 @@
     for (Clip *quote in clipList) {
         [chosenClipDictionary setObject:quote.uuid forKey:quote.quote];
     }
-    NSArray *quoteKeys = [[NSArray alloc] init];
+//    NSLog(@"%@", chosenClipDictionary); 
+    NSArray *quoteKeys = [chosenClipDictionary allKeys];
     NSString *randomQuote = quoteKeys[arc4random_uniform((int)[quoteKeys count])];
     NSString *randomuid = chosenClipDictionary[randomQuote];
     NSString *movieName = [self matchQuoteWithMovie:randomuid];
