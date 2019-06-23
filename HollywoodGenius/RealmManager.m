@@ -102,7 +102,10 @@
 - (void)prepareData {
 //    NSString *strFile = [[NSBundle mainBundle]
 //                              pathForResource:@"movieQuotes" ofType:@"csv"];
-    NSString *strFile = [NSString stringWithContentsOfFile:@"/Users/camsteezin/Desktop/Lighthouse/Midterm Project/HollyWood-Genius/movieQuotes.csv" encoding:NSUTF8StringEncoding error:NULL];
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"movieQuotes" ofType:@"csv"];
+//    NSString *strFile = [NSString stringWithContentsOfFile:@"/Users/camsteezin/Desktop/Lighthouse/Midterm Project/HollyWood-Genius/movieQuotes.csv"  encoding:NSUTF8StringEncoding error:NULL];
+    
+    NSString *strFile = [NSString stringWithContentsOfFile:path  encoding:NSUTF8StringEncoding error:NULL];
     if (!strFile) {
         NSLog(@"Error reading file.");
     }

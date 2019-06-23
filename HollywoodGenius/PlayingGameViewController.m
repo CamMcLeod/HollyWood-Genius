@@ -32,6 +32,7 @@
 
 -(void)loadVideoWithURL:(NSURL *) pathURL;
 -(void)loadQuoteWithString:(NSString *) quoteString;
+-(bool)checkforRepeats:(NSArray *)movieArray name:(NSString *)checkMovie;
 -(void)importDataset;
 -(void)askNewQuestion;
 -(void)resetViewForNewQuestion;
@@ -121,10 +122,19 @@
 }
 
 -(void)loadQuoteWithString:(NSString *) quoteString {
-    UILabel *quoteLabel = [[UILabel alloc] initWithFrame:self.videoView.frame];
-    [self.videoView addSubview:quoteLabel];
+    
+    CGRect quoteFrame = CGRectMake(10, 10, self.videoContainerView.frame.size.width-20, self.videoContainerView.frame.size.height-20);
+    
+    UILabel *quoteLabel = [[UILabel alloc] initWithFrame:quoteFrame];
+    [self.videoContainerView addSubview:quoteLabel];
     quoteLabel.text = self.answerCluster.correctAnswerClip;
-    quoteLabel.backgroundColor = [UIColor whiteColor];
+    quoteLabel.textColor = [UIColor colorWithRed:255/255.0 green:215/255.0 blue:0/255.0 alpha:1.0];
+    quoteLabel.backgroundColor = [UIColor darkGrayColor];
+    [quoteLabel setNumberOfLines:4];
+    [quoteLabel setTextAlignment:NSTextAlignmentCenter];
+    UIFont *font = quoteLabel.font;
+    quoteLabel.font = [font fontWithSize:30];
+    [quoteLabel setCenter:self.videoContainerView.center];
     
     
 }
@@ -175,7 +185,7 @@
         [self loadVideoWithURL:[NSURL URLWithString:self.answerCluster.correctAnswerClip] ];
         
     } else if (self.gameType == quoteGame) {
-        
+        NSLog(@"asking new quote");
         [self createDatabaseAnswerCluster];
         [self loadQuoteWithString:self.answerCluster.correctAnswerClip];
         
@@ -221,7 +231,7 @@
 
 -(void)createDatabaseAnswerCluster {
     // fill with algorithm to pull movies randomly from database
-    Movie *movie = [[Movie alloc] init];
+    Movie *movie;
     NSMutableArray *movies = [[NSMutableArray alloc] init];
     bool isMatch = NO;
     
@@ -229,30 +239,11 @@
         NSArray *tmp =  [self.realManager retrieveRandomQuoteMovieAndUID];
         NSString *theMovie =  tmp[1];
         NSString *quote = tmp[0];
-        if ([movies count] == 0) {
-            NSArray *tmp =  [self.realManager retrieveRandomQuoteMovieAndUID];
-            NSString *theMovie = tmp[1];
-            NSString *quote = tmp[0];
-            movie = [[Movie alloc] initWithTitle:theMovie andClips:@[quote]];
-            [movies addObject:movie];
-            NSLog(@"%@", theMovie);
-        } else {
-            for (int i = 0; i < [movies count]; i++) {
-                if ([theMovie isEqualToString:[movies[i] title]]) {
-                    isMatch = YES;
-                    break;
-                }
-                
-            }
-            if (!isMatch) {
-                movie = [[Movie alloc] initWithTitle:theMovie andClips:@[quote]];
-                [movies addObject:movie];
-                NSLog(@"%@", theMovie);
-                isMatch = NO;
-            }
-            
-        }
-
+        
+         if (![self checkforRepeats: movies name:theMovie]) {
+             movie = [[Movie alloc] initWithTitle:theMovie andClips:@[quote]];
+             [movies addObject:movie];
+         }
        
     }
     
@@ -273,12 +264,26 @@
 //
 }
 
+-(bool)checkforRepeats:(NSArray *)movieArray name:(NSString *)checkMovie {
+    
+    if ([movieArray count] == 0) {
+        return NO;
+    }
+    for (Movie *movieTitle in movieArray) {
+        if ([checkMovie isEqualToString: movieTitle.title]) {
+            return YES;
+        }
+    }
+    return NO;
+}
+
 -(void)resetViewForNewQuestion {
     
-    self.answerCluster.movies = [[NSMutableArray alloc] init];
+    self.answerCluster = [[AnswerCluster alloc] init];
     [self.collectionView reloadData];
-    [self.videoContainerView.layer.sublayers[0] removeFromSuperlayer];
-    
+    if (self.gameType == clipGame) {
+        [self.videoContainerView.layer.sublayers[0] removeFromSuperlayer];
+    }
     [self askNewQuestion];
     
     
@@ -305,6 +310,16 @@
         [self setModalPresentationStyle:UIModalPresentationCurrentContext];
         PopupViewController *dVC = [segue destinationViewController];
         dVC.answerIsCorrect = answerIsCorrect;
+        for (UIView *view in [self.videoContainerView subviews])
+        {
+            [view removeFromSuperview];
+        }
+        for (CALayer *layer in self.videoContainerView.layer.sublayers)
+        {
+            [layer removeFromSuperlayer];
+        }
+        
+        
         if ([self.answerManager.clipsInRound count] == QUESTIONS_IN_ROUND){
             dVC.endOfRound = TRUE;
             dVC.score = self.score.text;
@@ -327,6 +342,7 @@
     
     if ([unwindSegue.identifier isEqualToString:@"nextOrPlayAgain"]){
         if(sourceViewController.endOfRound) {
+            [self.userDelegate addNewTime:self.answerManager.timeOutput andScore:[self.score.text intValue]];
             self.answerManager = [[AnswerManager alloc] init];
             self.score.text = @"0";
             [self.score setHidden:NO];
@@ -335,8 +351,13 @@
         }
         [self resetViewForNewQuestion];
     } else if ([unwindSegue.identifier isEqualToString:@"exitGame"]){
-        if ([self.answerManager.clipsInRound count] == QUESTIONS_IN_ROUND){
+        if (sourceViewController.endOfRound){
             [self.userDelegate addNewTime:self.answerManager.timeOutput andScore:[self.score.text intValue]];
+            self.answerManager = [[AnswerManager alloc] init];
+            self.score.text = @"0";
+            [self.score setHidden:NO];
+            [self.scoreLabel setHidden:NO];
+            [self.timeLabel setHidden:NO];
         }
         [self.navigationController popViewControllerAnimated:NO];
     }

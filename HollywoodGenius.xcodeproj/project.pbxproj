@@ -16,8 +16,8 @@
 		06C00CEC22BC85D3004AE816 /* MovieObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C00CEB22BC85D3004AE816 /* MovieObject.m */; };
 		06C00CEF22BC866D004AE816 /* Clip.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C00CEE22BC866D004AE816 /* Clip.m */; };
 		06C00D0C22BDAB10004AE816 /* movieStuff.csv in Resources */ = {isa = PBXBuildFile; fileRef = 06C00D0B22BDAB10004AE816 /* movieStuff.csv */; };
-		06C00D0E22BDAC3F004AE816 /* movieQuotes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 06C00D0D22BDAC3F004AE816 /* movieQuotes.csv */; };
 		06C00D1122BEBDE9004AE816 /* ScoreHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C00D1022BEBDE9004AE816 /* ScoreHistory.m */; };
+		625D4C9222BF0056007B9005 /* movieQuotes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 06C00D0D22BDAC3F004AE816 /* movieQuotes.csv */; };
 		6298879622BB355700E0E117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F122BAE50D00DDAD3C /* Assets.xcassets */; };
 		6298879A22BB35BB00E0E117 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6298879922BB35BB00E0E117 /* AVFoundation.framework */; };
 		6298879C22BB35BF00E0E117 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6298879B22BB35BF00E0E117 /* AVKit.framework */; };
@@ -280,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				625D4C9222BF0056007B9005 /* movieQuotes.csv in Resources */,
 				06C00D0C22BDAB10004AE816 /* movieStuff.csv in Resources */,
 				629887AB22BB367700E0E117 /* Avatar.mp4 in Resources */,
 				629887AD22BB367700E0E117 /* Snakes on a Plane.mp4 in Resources */,
@@ -289,7 +290,6 @@
 				629887B622BB367700E0E117 /* Predator-2.mp4 in Resources */,
 				629887B222BB367700E0E117 /* The Princess Bride.mp4 in Resources */,
 				6298879622BB355700E0E117 /* Assets.xcassets in Resources */,
-				06C00D0E22BDAC3F004AE816 /* movieQuotes.csv in Resources */,
 				629A83F522BAE50D00DDAD3C /* LaunchScreen.storyboard in Resources */,
 				629A83F022BAE50D00DDAD3C /* Main.storyboard in Resources */,
 				629887B322BB367700E0E117 /* Airplane.mp4 in Resources */,
