@@ -14,7 +14,8 @@
 #import "AnswerManager.h"
 #import "AnswerCluster.h"
 #import "RealmManager.h"
-
+#import "HollywoodGenius-Bridging-Header.h"
+#import "HollywoodGenius-Swift.h"
 
 @interface PlayingGameViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
@@ -28,6 +29,7 @@
 @property (nonatomic) AnswerManager *answerManager;
 @property (nonatomic) AnswerCluster *answerCluster;
 @property RealmManager *realManager;
+
 
 -(void)loadVideoWithURL:(NSURL *) pathURL;
 -(void)loadQuoteWithString:(NSString *) quoteString;
@@ -54,16 +56,14 @@
 //    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
 //    backgroundImageView.image = backgroundImage;
 //    [self.view insertSubview:backgroundImageView atIndex:0];
-    
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     NSLog(@"%u", self.gameType);
-    
     [self importDataset];
     self.realManager = [[RealmManager alloc] init];
     [self.realManager createInitialData];
 //    [self askNewQuestion];
-    
+
     self.answerManager = [[AnswerManager alloc] init];
     
     [self.videoContainerView setFrame:CGRectMake(10, self.view.frame.size.height * 0.5 * 0.8, self.view.frame.size.width - 20, self.view.frame.size.height * 0.35)];
@@ -116,6 +116,7 @@
     ; }
 
 -(void)loadVideoWithURL:(NSURL *) pathURL {
+    
     AVPlayer *videoPlayer = [AVPlayer playerWithURL:pathURL];
     
     AVPlayerViewController *playerController = [[AVPlayerViewController alloc] init];
@@ -436,4 +437,5 @@
     }
     
 }
+
 @end

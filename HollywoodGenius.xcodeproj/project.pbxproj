@@ -18,8 +18,7 @@
 		06C00D0C22BDAB10004AE816 /* movieStuff.csv in Resources */ = {isa = PBXBuildFile; fileRef = 06C00D0B22BDAB10004AE816 /* movieStuff.csv */; };
 		06C00D1122BEBDE9004AE816 /* ScoreHistory.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C00D1022BEBDE9004AE816 /* ScoreHistory.m */; };
 		625D4C9222BF0056007B9005 /* movieQuotes.csv in Resources */ = {isa = PBXBuildFile; fileRef = 06C00D0D22BDAC3F004AE816 /* movieQuotes.csv */; };
-		625D4C9422C0CF4F007B9005 /* getYarnLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D4C9322C0CF4F007B9005 /* getYarnLoader.swift */; };
-		625D4C9522C0D471007B9005 /* getYarnLoader.swift in Resources */ = {isa = PBXBuildFile; fileRef = 625D4C9322C0CF4F007B9005 /* getYarnLoader.swift */; };
+		625D4C9622C0DA14007B9005 /* getYarnLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 625D4C9322C0CF4F007B9005 /* getYarnLoader.swift */; };
 		6298879622BB355700E0E117 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 629A83F122BAE50D00DDAD3C /* Assets.xcassets */; };
 		6298879A22BB35BB00E0E117 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6298879922BB35BB00E0E117 /* AVFoundation.framework */; };
 		6298879C22BB35BF00E0E117 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6298879B22BB35BF00E0E117 /* AVKit.framework */; };
@@ -72,7 +71,7 @@
 		06C00D0F22BEBDE9004AE816 /* ScoreHistory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScoreHistory.h; sourceTree = "<group>"; };
 		06C00D1022BEBDE9004AE816 /* ScoreHistory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScoreHistory.m; sourceTree = "<group>"; };
 		0D88A7A78A7CC36FD47E3E32 /* Pods-HollywoodGenius.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HollywoodGenius.release.xcconfig"; path = "Target Support Files/Pods-HollywoodGenius/Pods-HollywoodGenius.release.xcconfig"; sourceTree = "<group>"; };
-		625D4C9322C0CF4F007B9005 /* getYarnLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getYarnLoader.swift; sourceTree = "<group>"; };
+		625D4C9322C0CF4F007B9005 /* getYarnLoader.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; path = getYarnLoader.swift; sourceTree = "<group>"; };
 		6298879922BB35BB00E0E117 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		6298879B22BB35BF00E0E117 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		6298879D22BB35CA00E0E117 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -284,7 +283,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				625D4C9522C0D471007B9005 /* getYarnLoader.swift in Resources */,
 				625D4C9222BF0056007B9005 /* movieQuotes.csv in Resources */,
 				06C00D0C22BDAB10004AE816 /* movieStuff.csv in Resources */,
 				629887AB22BB367700E0E117 /* Avatar.mp4 in Resources */,
@@ -360,7 +358,7 @@
 				063EDEE422BAF73D00136602 /* GuessAnswersViewCell.m in Sources */,
 				063EDEDB22BAE97900136602 /* RootTableViewController.m in Sources */,
 				063EDEE122BAE9D600136602 /* PlayingGameViewController.m in Sources */,
-				625D4C9422C0CF4F007B9005 /* getYarnLoader.swift in Sources */,
+				625D4C9622C0DA14007B9005 /* getYarnLoader.swift in Sources */,
 				06C00CEC22BC85D3004AE816 /* MovieObject.m in Sources */,
 				06C00CE922BC84E3004AE816 /* RealmManager.m in Sources */,
 				063EDEDE22BAE99900136602 /* RootTableViewCell.m in Sources */,
@@ -401,6 +399,7 @@
 		629A83F922BAE50D00DDAD3C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -433,6 +432,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -453,6 +453,10 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PLIST_FILE_OUTPUT_FORMAT = binary;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
+				PRODUCT_NAME = HollywoodGenius;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -460,6 +464,7 @@
 		629A83FA22BAE50D00DDAD3C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
@@ -492,6 +497,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -505,6 +511,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PLIST_FILE_OUTPUT_FORMAT = binary;
+				PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR = YES;
+				PRODUCT_NAME = HollywoodGenius;
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -525,6 +535,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lighthouse.HollywoodGenius;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "HollywoodGenius/HollywoodGenius-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -547,6 +558,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Lighthouse.HollywoodGenius;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SCAN_ALL_SOURCE_FILES_FOR_INCLUDES = NO;
 				SWIFT_OBJC_BRIDGING_HEADER = "HollywoodGenius/HollywoodGenius-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
