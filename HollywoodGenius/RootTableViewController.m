@@ -10,11 +10,14 @@
 #import "RootTableViewCell.h"
 #import "PlayingGameViewController.h"
 #import "User.h"
+#import "RealmManager.h"
+#import <AVFoundation/AVFoundation.h>
 
 
 @interface RootTableViewController ()
 
 @property User *user;
+@property AVPlayer *player;
 
 @end
 
@@ -33,6 +36,14 @@ const int ANSWERS_ON_SCREEN = 4;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     self.user = [[User alloc] init];
+    
+    
+    NSString *mp3Path = [[NSBundle mainBundle] pathForResource:@"Harry Nilsson - Coconut (Audio)" ofType:@"mp3"];//Your Document mp3 path
+    AVURLAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL fileURLWithPath:mp3Path
+                                                     ] options:nil];
+    AVPlayerItem *_playerItem = [[AVPlayerItem alloc] initWithAsset:asset];
+    _player = [[AVPlayer alloc]initWithPlayerItem:_playerItem];
+    [_player addObserver:self forKeyPath:@"status" options:0 context:nil];
 }
 
 #pragma mark - Table view data source
@@ -197,9 +208,30 @@ const int ANSWERS_ON_SCREEN = 4;
         } else {
             self.user.perfectBestTime = time;
         }
+        RealmManager *realmanager = [[RealmManager alloc] init];
+        [realmanager addScoreData:self.user.totalScore averageTime:[NSString stringWithFormat:@"%f", self.user.averageTime] andUUID:[NSDateFormatter localizedStringFromDate:[NSDate date]
+                                                                                                                                dateStyle:NSDateFormatterShortStyle
+                                                                                                                                timeStyle:NSDateFormatterFullStyle]];
     }
     
     [self.tableView reloadData];
+    
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
+    
+    if (object == _player && [keyPath isEqualToString:@"status"])
+    {
+        if (_player.status == AVPlayerStatusFailed)
+            NSLog(@"AVPlayer Status Failed");
+        else if (_player.status == AVPlayerStatusReadyToPlay)
+        {
+            //Start playing song
+            [_player play];
+        }
+        else if (_player.status == AVPlayerItemStatusUnknown)
+            NSLog(@"AVPlayer Status Unknown");
+    }
     
 }
 

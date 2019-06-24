@@ -11,6 +11,7 @@
 		063EDEDE22BAE99900136602 /* RootTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEDD22BAE99900136602 /* RootTableViewCell.m */; };
 		063EDEE122BAE9D600136602 /* PlayingGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEE022BAE9D600136602 /* PlayingGameViewController.m */; };
 		063EDEE422BAF73D00136602 /* GuessAnswersViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 063EDEE322BAF73D00136602 /* GuessAnswersViewCell.m */; };
+		0674A89D22C08ED100F91FA9 /* Harry Nilsson - Coconut (Audio).mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0674A89C22C08ED100F91FA9 /* Harry Nilsson - Coconut (Audio).mp3 */; };
 		06C00CE022BC83D3004AE816 /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06C00CDF22BC83D2004AE816 /* RLMSupport.swift */; };
 		06C00CE922BC84E3004AE816 /* RealmManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C00CE822BC84E3004AE816 /* RealmManager.m */; };
 		06C00CEC22BC85D3004AE816 /* MovieObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 06C00CEB22BC85D3004AE816 /* MovieObject.m */; };
@@ -57,6 +58,7 @@
 		063EDEE022BAE9D600136602 /* PlayingGameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayingGameViewController.m; sourceTree = "<group>"; };
 		063EDEE222BAF73D00136602 /* GuessAnswersViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GuessAnswersViewCell.h; sourceTree = "<group>"; };
 		063EDEE322BAF73D00136602 /* GuessAnswersViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GuessAnswersViewCell.m; sourceTree = "<group>"; };
+		0674A89C22C08ED100F91FA9 /* Harry Nilsson - Coconut (Audio).mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Harry Nilsson - Coconut (Audio).mp3"; sourceTree = "<group>"; };
 		06C00CDE22BC83D2004AE816 /* HollywoodGenius-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HollywoodGenius-Bridging-Header.h"; sourceTree = "<group>"; };
 		06C00CDF22BC83D2004AE816 /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
 		06C00CE722BC84E3004AE816 /* RealmManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RealmManager.h; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 		629A83E722BAE50C00DDAD3C /* HollywoodGenius */ = {
 			isa = PBXGroup;
 			children = (
+				0674A89C22C08ED100F91FA9 /* Harry Nilsson - Coconut (Audio).mp3 */,
 				06C00D0D22BDAC3F004AE816 /* movieQuotes.csv */,
 				06C00D0B22BDAB10004AE816 /* movieStuff.csv */,
 				06C00CDF22BC83D2004AE816 /* RLMSupport.swift */,
@@ -254,6 +257,11 @@
 					629A83E422BAE50C00DDAD3C = {
 						CreatedOnToolsVersion = 10.2.1;
 						LastSwiftMigration = 1020;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -292,6 +300,7 @@
 				6298879622BB355700E0E117 /* Assets.xcassets in Resources */,
 				629A83F522BAE50D00DDAD3C /* LaunchScreen.storyboard in Resources */,
 				629A83F022BAE50D00DDAD3C /* Main.storyboard in Resources */,
+				0674A89D22C08ED100F91FA9 /* Harry Nilsson - Coconut (Audio).mp3 in Resources */,
 				629887B322BB367700E0E117 /* Airplane.mp4 in Resources */,
 				629887AF22BB367700E0E117 /* The Big Lebowski.mp4 in Resources */,
 				629887AC22BB367700E0E117 /* Predator-3.mp4 in Resources */,

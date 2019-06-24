@@ -14,6 +14,7 @@
 #import "AnswerManager.h"
 #import "AnswerCluster.h"
 #import "RealmManager.h"
+#import <AVFoundation/AVFoundation.h>
 
 
 @interface PlayingGameViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
@@ -29,6 +30,7 @@
 @property (nonatomic) AnswerManager *answerManager;
 @property (nonatomic) AnswerCluster *answerCluster;
 @property RealmManager *realManager;
+
 
 -(void)loadVideoWithURL:(NSURL *) pathURL;
 -(void)loadQuoteWithString:(NSString *) quoteString;
@@ -68,8 +70,6 @@
     self.answerManager = [[AnswerManager alloc] init];
     
    
-    
-  
     
 //   NSLog(@"%@",[RLMRealmConfiguration defaultConfiguration].fileURL);
     
@@ -267,9 +267,11 @@
     if ([movieArray count] == 0) {
         return NO;
     }
-    for (Movie *movieTitle in movieArray) {
-        if ([checkMovie isEqualToString: movieTitle.title]) {
-            return YES;
+    else {
+        for (Movie *movieTitle in movieArray) {
+            if ([checkMovie isEqualToString: movieTitle.title]) {
+                return YES;
+            }
         }
     }
     return NO;
@@ -361,6 +363,22 @@
     }
 }
 
+
+
+
+//- (void)playSaveSound(){
+//    path = Bundle.main.path(forResource: "upward.wav", ofType: nil)!
+//    let url = URL(fileURLWithPath: path)
+//
+//    do {
+//        //create your audioPlayer in your parent class as a property
+//        audioPlayer = try AVAudioPlayer(contentsOf: url)
+//        audioPlayer.play()
+//    } catch {
+//        print("couldn't load the file")
+//    }
+//}
+
 #pragma mark - Data Organization
 -(void)importDataset {
     
@@ -427,4 +445,6 @@
     }
     
 }
+
+
 @end

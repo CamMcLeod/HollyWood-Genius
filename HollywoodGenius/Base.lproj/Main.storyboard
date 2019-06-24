@@ -17,7 +17,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cVV-Yd-HAv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.43693814212328769" green="0.27493774431259399" blue="0.034032917362727767" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.99347804699999998" green="0.92834974319999997" blue="0.9256207192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="userInformation" textLabel="vQs-AI-jUk" rowHeight="117" style="IBUITableViewCellStyleDefault" id="THu-CX-SK7">
@@ -269,7 +269,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="0.43693814209999998" green="0.27493774430000001" blue="0.034032917359999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.99347804699999998" green="0.92834974319999997" blue="0.9256207192" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="6zw-A6-tUt" firstAttribute="leading" secondItem="x6H-bG-ueL" secondAttribute="leading" constant="20" id="1nW-5G-zUH"/>
                             <constraint firstItem="6LW-o7-axx" firstAttribute="centerY" secondItem="oA5-Pz-kYo" secondAttribute="centerY" multiplier="0.7" id="DDY-I0-6wY"/>
