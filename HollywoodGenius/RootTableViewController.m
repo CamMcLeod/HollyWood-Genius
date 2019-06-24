@@ -44,6 +44,12 @@ const int ANSWERS_ON_SCREEN = 4;
     AVPlayerItem *_playerItem = [[AVPlayerItem alloc] initWithAsset:asset];
     _player = [[AVPlayer alloc]initWithPlayerItem:_playerItem];
     [_player addObserver:self forKeyPath:@"status" options:0 context:nil];
+   
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self doVolumeFade];
+    
 }
 
 #pragma mark - Table view data source
@@ -169,6 +175,7 @@ const int ANSWERS_ON_SCREEN = 4;
             
             switch (indexPath.row) {
                 case 1: dVC.gameType = clipGame;
+                    _player.volume = 0.2;
                     break;
                 case 2: dVC.gameType = quoteGame;
                     break;
@@ -232,7 +239,12 @@ const int ANSWERS_ON_SCREEN = 4;
         else if (_player.status == AVPlayerItemStatusUnknown)
             NSLog(@"AVPlayer Status Unknown");
     }
-    
 }
 
+-(void)doVolumeFade{
+    if (self.player.volume < 1) {
+        self.player.volume = 1;
+        [self performSelector:@selector(doVolumeFade) withObject:nil afterDelay:0.1];
+    }
+}
 @end

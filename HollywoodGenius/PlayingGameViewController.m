@@ -358,6 +358,7 @@
             [self.score setHidden:NO];
             [self.scoreLabel setHidden:NO];
             [self.timeLabel setHidden:NO];
+        
         }
         [self.navigationController popViewControllerAnimated:NO];
     }
