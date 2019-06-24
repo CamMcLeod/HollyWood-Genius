@@ -31,10 +31,10 @@
 @property RealmManager *realManager;
 
 
--(void)loadVideoWithURL:(NSURL *) pathURL;
+//-(void)loadVideoWithURL:(NSURL *) pathURL;
 -(void)loadQuoteWithString:(NSString *) quoteString;
 -(bool)checkforRepeats:(NSArray *)movieArray name:(NSString *)checkMovie;
--(void)importDataset;
+//-(void)importDataset;
 -(void)askNewQuestion;
 -(void)resetViewForNewQuestion;
 -(void)runTimer;
@@ -59,7 +59,7 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     NSLog(@"%u", self.gameType);
-    [self importDataset];
+//    [self importDataset];
     self.realManager = [[RealmManager alloc] init];
     [self.realManager createInitialData];
 //    [self askNewQuestion];
@@ -68,7 +68,10 @@
     
     [self.videoContainerView setFrame:CGRectMake(10, self.view.frame.size.height * 0.5 * 0.8, self.view.frame.size.width - 20, self.view.frame.size.height * 0.35)];
     
-   
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveTestNotification:)
+                                                 name:@"TestNotification"
+                                               object:nil];
     
   
     
@@ -115,9 +118,41 @@
 //    cell.answer.backgroundColor = [UIColor blueColor];
     ; }
 
--(void)loadVideoWithURL:(NSURL *) pathURL {
+//-(void)loadVideoWithURL:(NSURL *) pathURL {
+//
+//    AVPlayer *videoPlayer = [AVPlayer playerWithURL:pathURL];
+//
+//    AVPlayerViewController *playerController = [[AVPlayerViewController alloc] init];
+//    playerController.player = videoPlayer;
+//    AVPlayerLayer *playerLayer = [[AVPlayerLayer alloc] init];
+//    [playerLayer setPlayer:videoPlayer];
+//    [self.videoContainerView.layer addSublayer:playerLayer];
+//    playerLayer.frame = self.videoContainerView.bounds;
+//    [videoPlayer play];
+//
+//}
+
+-(void)loadVideoWithString:(NSString *) pathString {
     
-    AVPlayer *videoPlayer = [AVPlayer playerWithURL:pathURL];
+    YarnSwift *yarnSwift = [[YarnSwift alloc] init];
+    AVPlayer *videoPlayer = [yarnSwift yarnWithMovieString:pathString];
+    AVPlayerViewController *playerController = [[AVPlayerViewController alloc] init];
+    playerController.player = videoPlayer;
+    AVPlayerLayer *playerLayer = [[AVPlayerLayer alloc] init];
+    [playerLayer setPlayer:videoPlayer];
+    [self.videoContainerView.layer addSublayer:playerLayer];
+    playerLayer.frame = self.videoContainerView.bounds;
+    [videoPlayer play];
+    
+}
+
+- (void) receiveTestNotification:(NSNotification *) notification
+{
+    // [notification name] should always be @"TestNotification"
+    // unless you use this method for observation of other notifications
+    // as well.
+    NSDictionary *userInfo = notification.userInfo;
+    AVPlayer *videoPlayer = [userInfo objectForKey:@"someKey"];
     
     AVPlayerViewController *playerController = [[AVPlayerViewController alloc] init];
     playerController.player = videoPlayer;
@@ -187,14 +222,19 @@
 
 -(void)askNewQuestion {
     
+    [self createDatabaseAnswerCluster];
+    
     if (self.gameType == clipGame) {
         
-        [self createAnswerCluster];
-        [self loadVideoWithURL:[NSURL URLWithString:self.answerCluster.correctAnswerClip] ];
+//        [self createAnswerCluster];
+//        [self loadVideoWithURL:[NSURL URLWithString:self.answerCluster.correctAnswerClip] ];
+        
+
+        [self loadVideoWithString:self.answerCluster.correctAnswerName];
         
     } else if (self.gameType == quoteGame) {
-        NSLog(@"asking new quote");
-        [self createDatabaseAnswerCluster];
+
+//        [self createDatabaseAnswerCluster];
         [self loadQuoteWithString:self.answerCluster.correctAnswerClip];
         
     }
@@ -241,7 +281,6 @@
     // fill with algorithm to pull movies randomly from database
     Movie *movie;
     NSMutableArray *movies = [[NSMutableArray alloc] init];
-    bool isMatch = NO;
     
     while ([movies count] < ANSWERS_ON_SCREEN) {
         NSArray *tmp =  [self.realManager retrieveRandomQuoteMovieAndUID];
@@ -372,70 +411,77 @@
 }
 
 #pragma mark - Data Organization
--(void)importDataset {
+//-(void)importDataset {
+//
+//    if (self.gameType == clipGame) {
+//
+//        self.dummyMovieAnswerArray = [[NSMutableArray alloc] initWithCapacity:10];
+//
+//        NSBundle *mainBundle = [NSBundle mainBundle];
+//
+//        NSURL *loadURL = [mainBundle URLForResource:@"Airplane" withExtension:@"mp4"];
+//        NSString *path0 = [loadURL absoluteString];
+//        Movie *movie0 = [[Movie alloc] initWithTitle:@"Airplane" andClips:@[path0]];
+//        self.dummyMovieAnswerArray[0] = movie0;
+//
+//        loadURL = [mainBundle URLForResource:@"Avatar" withExtension:@"mp4"];
+//        NSString *path1 = [loadURL absoluteString];
+//        Movie *movie1 = [[Movie alloc] initWithTitle:@"Avatar" andClips:@[path1]];
+//        self.dummyMovieAnswerArray[1] = movie1;
+//
+//        loadURL = [mainBundle URLForResource:@"Deadpool" withExtension:@"mp4"];
+//        NSString *path2 = [loadURL absoluteString];
+//        Movie *movie2 = [[Movie alloc] initWithTitle:@"Deadpool" andClips:@[path2]];
+//        self.dummyMovieAnswerArray[2] = movie2;
+//
+//        loadURL = [mainBundle URLForResource:@"Indiana Jones and the Last Crusade" withExtension:@"mp4"];
+//        NSString *path3 = [loadURL absoluteString];
+//        Movie *movie3 = [[Movie alloc] initWithTitle:@"Indiana Jones and the Last Crusade" andClips:@[path3]];
+//        self.dummyMovieAnswerArray[3] = movie3;
+//
+//        NSURL *loadURL1 = [mainBundle URLForResource:@"Predator-1" withExtension:@"mp4"];
+//        NSURL *loadURL2 = [mainBundle URLForResource:@"Predator-2" withExtension:@"mp4"];
+//        NSURL *loadURL3 = [mainBundle URLForResource:@"Predator-3" withExtension:@"mp4"];
+//        NSString *path4 = [loadURL1 absoluteString];
+//        NSString *path5 = [loadURL2 absoluteString];
+//        NSString *path6 = [loadURL3 absoluteString];
+//        Movie *movie4 = [[Movie alloc] initWithTitle:@"Predator" andClips:@[path4, path5, path6]];
+//        self.dummyMovieAnswerArray[4] = movie4;
+//
+//        loadURL = [mainBundle URLForResource:@"Snakes on a Plane" withExtension:@"mp4"];
+//        NSString *path7 = [loadURL absoluteString];
+//        Movie *movie5 = [[Movie alloc] initWithTitle:@"Snakes on a Plane" andClips:@[path7]];
+//        self.dummyMovieAnswerArray[5] = movie5;
+//
+//        loadURL = [mainBundle URLForResource:@"The Big Lebowski" withExtension:@"mp4"];
+//        NSString *path8 = [loadURL absoluteString];
+//        Movie *movie6 = [[Movie alloc] initWithTitle:@"The Big Lebowski" andClips:@[path8]];
+//        self.dummyMovieAnswerArray[6] = movie6;
+//
+//        loadURL = [mainBundle URLForResource:@"The Princess Bride" withExtension:@"mp4"];
+//        NSString *path9 = [loadURL absoluteString];
+//        Movie *movie7 = [[Movie alloc] initWithTitle:@"The Princess Bride" andClips:@[path9]];
+//        self.dummyMovieAnswerArray[7] = movie7;
+//
+//        loadURL = [mainBundle URLForResource:@"Titanic" withExtension:@"mp4"];
+//        NSString *path10 = [loadURL absoluteString];
+//        Movie *movie8 = [[Movie alloc] initWithTitle:@"Titanic" andClips:@[path10]];
+//        self.dummyMovieAnswerArray[8] = movie8;
+//
+//        loadURL = [mainBundle URLForResource:@"Zoolander" withExtension:@"mp4"];
+//        NSString *path11 = [loadURL absoluteString];
+//        Movie *movie9 = [[Movie alloc] initWithTitle:@"Zoolander" andClips:@[path11]];
+//        self.dummyMovieAnswerArray[9] = movie9;
+//
+//    }
+//
+//}
+
+
+- (void)dealloc {
     
-    if (self.gameType == clipGame) {
-        
-        self.dummyMovieAnswerArray = [[NSMutableArray alloc] initWithCapacity:10];
-        
-        NSBundle *mainBundle = [NSBundle mainBundle];
-        
-        NSURL *loadURL = [mainBundle URLForResource:@"Airplane" withExtension:@"mp4"];
-        NSString *path0 = [loadURL absoluteString];
-        Movie *movie0 = [[Movie alloc] initWithTitle:@"Airplane" andClips:@[path0]];
-        self.dummyMovieAnswerArray[0] = movie0;
-        
-        loadURL = [mainBundle URLForResource:@"Avatar" withExtension:@"mp4"];
-        NSString *path1 = [loadURL absoluteString];
-        Movie *movie1 = [[Movie alloc] initWithTitle:@"Avatar" andClips:@[path1]];
-        self.dummyMovieAnswerArray[1] = movie1;
-        
-        loadURL = [mainBundle URLForResource:@"Deadpool" withExtension:@"mp4"];
-        NSString *path2 = [loadURL absoluteString];
-        Movie *movie2 = [[Movie alloc] initWithTitle:@"Deadpool" andClips:@[path2]];
-        self.dummyMovieAnswerArray[2] = movie2;
-        
-        loadURL = [mainBundle URLForResource:@"Indiana Jones and the Last Crusade" withExtension:@"mp4"];
-        NSString *path3 = [loadURL absoluteString];
-        Movie *movie3 = [[Movie alloc] initWithTitle:@"Indiana Jones and the Last Crusade" andClips:@[path3]];
-        self.dummyMovieAnswerArray[3] = movie3;
-        
-        NSURL *loadURL1 = [mainBundle URLForResource:@"Predator-1" withExtension:@"mp4"];
-        NSURL *loadURL2 = [mainBundle URLForResource:@"Predator-2" withExtension:@"mp4"];
-        NSURL *loadURL3 = [mainBundle URLForResource:@"Predator-3" withExtension:@"mp4"];
-        NSString *path4 = [loadURL1 absoluteString];
-        NSString *path5 = [loadURL2 absoluteString];
-        NSString *path6 = [loadURL3 absoluteString];
-        Movie *movie4 = [[Movie alloc] initWithTitle:@"Predator" andClips:@[path4, path5, path6]];
-        self.dummyMovieAnswerArray[4] = movie4;
-        
-        loadURL = [mainBundle URLForResource:@"Snakes on a Plane" withExtension:@"mp4"];
-        NSString *path7 = [loadURL absoluteString];
-        Movie *movie5 = [[Movie alloc] initWithTitle:@"Snakes on a Plane" andClips:@[path7]];
-        self.dummyMovieAnswerArray[5] = movie5;
-        
-        loadURL = [mainBundle URLForResource:@"The Big Lebowski" withExtension:@"mp4"];
-        NSString *path8 = [loadURL absoluteString];
-        Movie *movie6 = [[Movie alloc] initWithTitle:@"The Big Lebowski" andClips:@[path8]];
-        self.dummyMovieAnswerArray[6] = movie6;
-        
-        loadURL = [mainBundle URLForResource:@"The Princess Bride" withExtension:@"mp4"];
-        NSString *path9 = [loadURL absoluteString];
-        Movie *movie7 = [[Movie alloc] initWithTitle:@"The Princess Bride" andClips:@[path9]];
-        self.dummyMovieAnswerArray[7] = movie7;
-        
-        loadURL = [mainBundle URLForResource:@"Titanic" withExtension:@"mp4"];
-        NSString *path10 = [loadURL absoluteString];
-        Movie *movie8 = [[Movie alloc] initWithTitle:@"Titanic" andClips:@[path10]];
-        self.dummyMovieAnswerArray[8] = movie8;
-        
-        loadURL = [mainBundle URLForResource:@"Zoolander" withExtension:@"mp4"];
-        NSString *path11 = [loadURL absoluteString];
-        Movie *movie9 = [[Movie alloc] initWithTitle:@"Zoolander" andClips:@[path11]];
-        self.dummyMovieAnswerArray[9] = movie9;
-        
-    }
-    
+    [NSNotificationCenter.defaultCenter removeObserver:self];
 }
+
 
 @end

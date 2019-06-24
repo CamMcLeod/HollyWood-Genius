@@ -13,8 +13,7 @@ import AVFoundation
 @objc public class YarnSwift: NSObject{
     
     
-    @objc func yarn(movieString : String) -> AVPlayer {
-        
+    func yarn(movieString : String) -> AVPlayer{
         let baseUrl1 = "https://getyarn.io/yarn-find?text=%3A%22"
         let query1 = baseUrl1 + movieString.replacingOccurrences(of: " ", with: "%20") + "%22"
         let url1 = URL(string: baseUrl1 + query1)!
@@ -71,6 +70,8 @@ import AVFoundation
                     }
                     
                     videoPlayer = AVPlayer.init(url: url3)
+                    let userInfo : Dictionary = ["someKey" : videoPlayer]
+                    NotificationCenter.default.post(name: NSNotification.Name(rawValue: "TestNotification"), object: nil, userInfo: userInfo)
                     
                 }
                 
@@ -81,7 +82,7 @@ import AVFoundation
         }
         
         task1.resume()
-        
         return videoPlayer
     }
+    
 }
