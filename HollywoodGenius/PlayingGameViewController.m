@@ -135,14 +135,7 @@
 -(void)loadVideoWithString:(NSString *) pathString {
     
     YarnSwift *yarnSwift = [[YarnSwift alloc] init];
-    AVPlayer *videoPlayer = [yarnSwift yarnWithMovieString:pathString];
-    AVPlayerViewController *playerController = [[AVPlayerViewController alloc] init];
-    playerController.player = videoPlayer;
-    AVPlayerLayer *playerLayer = [[AVPlayerLayer alloc] init];
-    [playerLayer setPlayer:videoPlayer];
-    [self.videoContainerView.layer addSublayer:playerLayer];
-    playerLayer.frame = self.videoContainerView.bounds;
-    [videoPlayer play];
+    [yarnSwift yarnWithMovieString:pathString];
     
 }
 

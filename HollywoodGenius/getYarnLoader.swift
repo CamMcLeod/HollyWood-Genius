@@ -13,10 +13,10 @@ import AVFoundation
 @objc public class YarnSwift: NSObject{
     
     
-    func yarn(movieString : String) -> AVPlayer{
+    @objc func yarn(movieString : String){
         let baseUrl1 = "https://getyarn.io/yarn-find?text=%3A%22"
         let query1 = baseUrl1 + movieString.replacingOccurrences(of: " ", with: "%20") + "%22"
-        let url1 = URL(string: baseUrl1 + query1)!
+        let url1 = URL(string: query1)!
         var videoString = "whoops"
         var clipString = "uhoh"
         var videoPlayer : AVPlayer = AVPlayer.init()
@@ -82,7 +82,6 @@ import AVFoundation
         }
         
         task1.resume()
-        return videoPlayer
     }
     
 }
