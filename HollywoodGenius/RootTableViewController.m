@@ -38,7 +38,7 @@ const int ANSWERS_ON_SCREEN = 4;
     self.user = [[User alloc] init];
     
     
-    NSString *mp3Path = [[NSBundle mainBundle] pathForResource:@"Harry Nilsson - Coconut (Audio)" ofType:@"mp3"];//Your Document mp3 path
+    NSString *mp3Path = [[NSBundle mainBundle] pathForResource:@"Fatboy Slim - Right Here, Right Now" ofType:@"mp3"];//Your Document mp3 path
     AVURLAsset *asset = [AVURLAsset URLAssetWithURL:[NSURL fileURLWithPath:mp3Path
                                                      ] options:nil];
     AVPlayerItem *_playerItem = [[AVPlayerItem alloc] initWithAsset:asset];
@@ -175,7 +175,7 @@ const int ANSWERS_ON_SCREEN = 4;
             
             switch (indexPath.row) {
                 case 1: dVC.gameType = clipGame;
-                    _player.volume = 0.2;
+                    _player.volume = 0.02;
                     break;
                 case 2: dVC.gameType = quoteGame;
                     break;
