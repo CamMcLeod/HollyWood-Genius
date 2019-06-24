@@ -18,7 +18,6 @@
 
 @interface PlayingGameViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-@property (weak, nonatomic) IBOutlet UIView *videoView;
 @property (weak, nonatomic) IBOutlet UILabel *score;
 @property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (weak, nonatomic) IBOutlet UIView *videoContainerView;
@@ -63,9 +62,11 @@
     [self importDataset];
     self.realManager = [[RealmManager alloc] init];
     [self.realManager createInitialData];
-    [self askNewQuestion];
+//    [self askNewQuestion];
     
     self.answerManager = [[AnswerManager alloc] init];
+    
+    [self.videoContainerView setFrame:CGRectMake(10, self.view.frame.size.height * 0.5 * 0.8, self.view.frame.size.width - 20, self.view.frame.size.height * 0.35)];
     
    
     
@@ -73,6 +74,12 @@
     
 //   NSLog(@"%@",[RLMRealmConfiguration defaultConfiguration].fileURL);
     
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    self.resetViewForNewQuestion;
     
 }
 
@@ -115,25 +122,27 @@
     playerController.player = videoPlayer;
     AVPlayerLayer *playerLayer = [[AVPlayerLayer alloc] init];
     [playerLayer setPlayer:videoPlayer];
-    playerLayer.frame = self.videoContainerView.frame;
     [self.videoContainerView.layer addSublayer:playerLayer];
+    playerLayer.frame = self.videoContainerView.bounds;
     [videoPlayer play];
     
 }
 
 -(void)loadQuoteWithString:(NSString *) quoteString {
     
-    CGRect quoteFrame = CGRectMake(10, 10, self.videoContainerView.frame.size.width-20, self.videoContainerView.frame.size.height-20);
-    
-    UILabel *quoteLabel = [[UILabel alloc] initWithFrame:quoteFrame];
+    UILabel *quoteLabel = [[UILabel alloc] init];
     [self.videoContainerView addSubview:quoteLabel];
     quoteLabel.text = self.answerCluster.correctAnswerClip;
     quoteLabel.textColor = [UIColor colorWithRed:255/255.0 green:122/255.0 blue:0/255.0 alpha:1.0];
-    [quoteLabel setNumberOfLines:4];
-    [quoteLabel setTextAlignment:NSTextAlignmentCenter];
+    [quoteLabel setNumberOfLines:5];
+    
     UIFont *font = quoteLabel.font;
     quoteLabel.font = [font fontWithSize:30];
     [quoteLabel setCenter:self.videoContainerView.center];
+    [quoteLabel setTextAlignment:NSTextAlignmentCenter];
+    quoteLabel.frame = CGRectMake(0, 0, self.videoContainerView.frame.size.width, self.videoContainerView.frame.size.height);
+    NSLog(NSStringFromCGRect(self.videoContainerView.frame));
+    NSLog(NSStringFromCGRect(quoteLabel.frame));
     
 }
 
